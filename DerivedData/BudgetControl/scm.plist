@@ -4,14 +4,21 @@
 <dict>
 	<key>FoundWorkingCopyPaths</key>
 	<array>
-		<string>/Users/admin</string>
-		<string>/Users/admin/Documents/iOS_progs/Bubbles1.00</string>
+		<string>/Users/admin/Documents/iOS_progs/BudgetControl</string>
 	</array>
 	<key>LastWorkingCopyScanDate</key>
-	<date>2014-02-22T19:42:17Z</date>
+	<date>2014-03-18T17:04:34Z</date>
 	<key>MissingFilePaths</key>
 	<array>
 		<string>/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphoneos/BudgetControl.app</string>
+		<string>/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDIncomeCategory.h</string>
+		<string>/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDExpenseCategory.h</string>
+		<string>/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDExpense.m</string>
+		<string>/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDBudget.m</string>
+		<string>/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDExpense.h</string>
+		<string>/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDIncomeCategory.m</string>
+		<string>/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDBudget.h</string>
+		<string>/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDExpenseCategory.m</string>
 	</array>
 	<key>Version</key>
 	<integer>4</integer>

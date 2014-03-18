@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841A068418CC784A00D8E98A /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A068318CC784A00D8E98A /* CoreDataManager.m */; };
+		842C08C518BA249C001F2938 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C08C418BA249C001F2938 /* SettingsViewController.m */; };
+		84B109B218D8B42000F59102 /* CDExpenseCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B109B118D8B42000F59102 /* CDExpenseCategory.m */; };
+		84B109B518D8B42100F59102 /* CDExpense.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B109B418D8B42100F59102 /* CDExpense.m */; };
+		84B109B818D8B42100F59102 /* CDIncome.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B109B718D8B42100F59102 /* CDIncome.m */; };
+		84B109BB18D8B42100F59102 /* CDIncomeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B109BA18D8B42100F59102 /* CDIncomeCategory.m */; };
+		84B109BE18D8B42100F59102 /* CDBudget.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B109BD18D8B42100F59102 /* CDBudget.m */; };
 		84E9F86818B91BC800F0C9C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E9F86718B91BC800F0C9C3 /* UIKit.framework */; };
 		84E9F86A18B91BC800F0C9C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E9F86918B91BC800F0C9C3 /* Foundation.framework */; };
 		84E9F86C18B91BC800F0C9C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E9F86B18B91BC800F0C9C3 /* CoreGraphics.framework */; };
@@ -24,6 +31,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		841A068218CC784A00D8E98A /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		841A068318CC784A00D8E98A /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		842C08C318BA249C001F2938 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		842C08C418BA249C001F2938 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		84B109B018D8B42000F59102 /* CDExpenseCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDExpenseCategory.h; sourceTree = "<group>"; };
+		84B109B118D8B42000F59102 /* CDExpenseCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDExpenseCategory.m; sourceTree = "<group>"; };
+		84B109B318D8B42100F59102 /* CDExpense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDExpense.h; sourceTree = "<group>"; };
+		84B109B418D8B42100F59102 /* CDExpense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDExpense.m; sourceTree = "<group>"; };
+		84B109B618D8B42100F59102 /* CDIncome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIncome.h; sourceTree = "<group>"; };
+		84B109B718D8B42100F59102 /* CDIncome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIncome.m; sourceTree = "<group>"; };
+		84B109B918D8B42100F59102 /* CDIncomeCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIncomeCategory.h; sourceTree = "<group>"; };
+		84B109BA18D8B42100F59102 /* CDIncomeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIncomeCategory.m; sourceTree = "<group>"; };
+		84B109BC18D8B42100F59102 /* CDBudget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBudget.h; sourceTree = "<group>"; };
+		84B109BD18D8B42100F59102 /* CDBudget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBudget.m; sourceTree = "<group>"; };
 		84E9F86418B91BC800F0C9C3 /* BudgetControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudgetControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E9F86718B91BC800F0C9C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		84E9F86918B91BC800F0C9C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -62,6 +83,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		841A068118CC6D2600D8E98A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				841A068218CC784A00D8E98A /* CoreDataManager.h */,
+				841A068318CC784A00D8E98A /* CoreDataManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		84415E3018B93A380013B301 /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				84B109BC18D8B42100F59102 /* CDBudget.h */,
+				84B109BD18D8B42100F59102 /* CDBudget.m */,
+				84B109B918D8B42100F59102 /* CDIncomeCategory.h */,
+				84B109BA18D8B42100F59102 /* CDIncomeCategory.m */,
+				84B109B618D8B42100F59102 /* CDIncome.h */,
+				84B109B718D8B42100F59102 /* CDIncome.m */,
+				84B109B318D8B42100F59102 /* CDExpense.h */,
+				84B109B418D8B42100F59102 /* CDExpense.m */,
+				84B109B018D8B42000F59102 /* CDExpenseCategory.h */,
+				84B109B118D8B42000F59102 /* CDExpenseCategory.m */,
+			);
+			name = CoreDataModel;
+			sourceTree = "<group>";
+		};
 		84E9F85B18B91BC800F0C9C3 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +187,8 @@
 		84E9F88B18B91C2C00F0C9C3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				841A068118CC6D2600D8E98A /* Managers */,
+				84415E3018B93A380013B301 /* CoreDataModel */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -156,6 +205,8 @@
 			children = (
 				84E9F88F18B91CB400F0C9C3 /* HomeViewController.h */,
 				84E9F89018B91CB400F0C9C3 /* HomeViewController.m */,
+				842C08C318BA249C001F2938 /* SettingsViewController.h */,
+				842C08C418BA249C001F2938 /* SettingsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -248,6 +299,13 @@
 				84E9F88318B91BC900F0C9C3 /* BudgetControl.xcdatamodeld in Sources */,
 				84E9F89118B91CB400F0C9C3 /* HomeViewController.m in Sources */,
 				84E9F89718B9272600F0C9C3 /* Utilities.m in Sources */,
+				842C08C518BA249C001F2938 /* SettingsViewController.m in Sources */,
+				841A068418CC784A00D8E98A /* CoreDataManager.m in Sources */,
+				84B109B218D8B42000F59102 /* CDExpenseCategory.m in Sources */,
+				84B109B518D8B42100F59102 /* CDExpense.m in Sources */,
+				84B109B818D8B42100F59102 /* CDIncome.m in Sources */,
+				84B109BB18D8B42100F59102 /* CDIncomeCategory.m in Sources */,
+				84B109BE18D8B42100F59102 /* CDBudget.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +422,7 @@
 				84E9F88818B91BC900F0C9C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
