@@ -13,4 +13,8 @@
 +(void) saveUser:(NSString *)userName;
 +(NSString *) loadUserDefaults;
 
++(NSDateFormatter*) sharedDF;
++(NSDate*) dateFromString:(NSString*)string withFormat:(NSString*)format;
++(NSString*) stringFromDate:(NSDate*)date withFormat:(NSString*)format;
+
 @end

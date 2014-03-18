@@ -42,4 +42,25 @@
     return  path;
 }
 
+#pragma mark - DateFormatter
+
++(NSDateFormatter*) sharedDF {
+    static NSDateFormatter *__dateFormatter = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        __dateFormatter = [[NSDateFormatter alloc]init];
+    });
+    return __dateFormatter;
+}
+
++(NSDate*) dateFromString:(NSString*)string withFormat:(NSString*)format {
+    [[Utilities sharedDF] setDateFormat:format];
+    return [[Utilities sharedDF] dateFromString:string];
+}
+
++(NSString*) stringFromDate:(NSDate*)date withFormat:(NSString*)format {
+    [[Utilities sharedDF] setDateFormat:format];
+    return [[Utilities sharedDF] stringFromDate:date];
+}
+
 @end
