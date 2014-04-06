@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Roma. All rights reserved.
 //
 
+#import "Utilities.h"
+
 #import "CDBudget.h"
 #import "CDExpense.h"
 #import "CDIncome.h"
@@ -41,7 +43,7 @@
     }
     else {
         newBudget = [[CDBudget alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:context];
-        newBudget.date = date;
+        newBudget.date = [Utilities dateFromString:date withFormat:[NSString stringWithFormat:@"MMMM YYYY"]];
     }
     return newBudget;
 }

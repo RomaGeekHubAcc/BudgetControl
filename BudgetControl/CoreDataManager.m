@@ -70,6 +70,16 @@
     }
 }
 
+//-(void) createNewIncomeWithDate:(NSDate*)date  {
+//    NSEntityDescription *entityDescr = [NSEntityDescription entityForName:[[CDIncome class] description] inManagedObjectContext:self.managedObjectContext];
+//    
+//    CDIncome *income = [[CDIncome alloc] initWithEntity:entityDescr insertIntoManagedObjectContext:self.managedObjectContext];
+//}
+
+-(void) insertCategoryIncome {
+    
+}
+
 
 #pragma mark - Core Data stack
 
@@ -153,3 +163,32 @@
 }
 
 @end
+
+
+//+(CDBudget*) budgetWithDate:(NSString*)date inContext:(NSManagedObjectContext*)context {
+//    
+//    CDBudget *newBudget = nil;
+//    
+//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:[[CDBudget class] description] inManagedObjectContext:context];
+//    [fetchRequest setEntity:entityDescription];
+//    
+//    NSDictionary *attributes = [entityDescription attributesByName];
+//    NSString *attributeName = [attributes.allKeys lastObject];
+//    
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ like %@", attributeName, date];
+//    
+//    [fetchRequest setPredicate:predicate];
+//    
+//    NSError *error = nil;
+//    NSArray *matchingData = [context executeFetchRequest:fetchRequest error:&error];
+//    
+//    if (matchingData.count > 0) {
+//        newBudget = [matchingData lastObject];
+//    }
+//    else {
+//        newBudget = [[CDBudget alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:context];
+//        newBudget.date = [Utilities dateFromString:date withFormat:[NSString stringWithFormat:@"MMMM YYYY"]];
+//    }
+//    return newBudget;
+//}

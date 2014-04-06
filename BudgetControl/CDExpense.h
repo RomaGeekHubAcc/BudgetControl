@@ -13,7 +13,7 @@
 
 @interface CDExpense : NSManagedObject
 
-@property (nonatomic, retain) NSString * date;
+@property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSString * expenseDescription;
 @property (nonatomic, retain) NSDecimalNumber * price;
 @property (nonatomic, retain) NSString * checkAddress;

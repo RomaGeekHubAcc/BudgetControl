@@ -9,15 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class CDBudget;
+@class CDBudget, CDIncomeCategory;
 
 @interface CDIncome : NSManagedObject
 
-@property (nonatomic, retain) NSString * date;
+@property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSString * incomeDescription;
 @property (nonatomic, retain) NSString * incomeName;
 @property (nonatomic, retain) NSDecimalNumber * money;
 @property (nonatomic, retain) CDBudget *budget;
-@property (nonatomic, retain) NSManagedObject *category;
+@property (nonatomic, retain) CDIncomeCategory *category;
+
++(CDIncome*) newIncomeWithDate:(NSDate*)date inManagedObjectContext:(NSManagedObjectContext*)context;
 
 @end

@@ -24,4 +24,6 @@
 - (void)addIncomes:(NSSet *)values;
 - (void)removeIncomes:(NSSet *)values;
 
++(CDIncomeCategory*) categoryWithName:(NSString*)name inContext:(NSManagedObjectContext*)context;
+
 @end

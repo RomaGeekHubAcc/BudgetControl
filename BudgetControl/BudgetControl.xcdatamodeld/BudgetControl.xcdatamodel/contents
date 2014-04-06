@@ -8,7 +8,7 @@
     </entity>
     <entity name="CDExpense" representedClassName="CDExpense" syncable="YES">
         <attribute name="checkAddress" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="expenseDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <relationship name="budget" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CDBudget" inverseName="expenses" inverseEntity="CDBudget" syncable="YES"/>
@@ -19,7 +19,7 @@
         <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDExpense" inverseName="category" inverseEntity="CDExpense" syncable="YES"/>
     </entity>
     <entity name="CDIncome" representedClassName="CDIncome" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="incomeDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="incomeName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="money" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>

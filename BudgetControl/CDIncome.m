@@ -8,6 +8,7 @@
 
 #import "CDIncome.h"
 #import "CDBudget.h"
+#import "CDIncomeCategory.h"
 
 
 @implementation CDIncome
@@ -18,5 +19,15 @@
 @dynamic money;
 @dynamic budget;
 @dynamic category;
+
++(CDIncome*) newIncomeWithDate:(NSDate*)date inManagedObjectContext:(NSManagedObjectContext*)context {
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:[[CDIncome class] description] inManagedObjectContext:context];
+    
+    CDIncome *newIncome = [[CDIncome alloc] initWithEntity:entity insertIntoManagedObjectContext:context];
+    newIncome.date = date;
+    
+    return newIncome;
+}
 
 @end

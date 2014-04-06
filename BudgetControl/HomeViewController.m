@@ -35,7 +35,8 @@
     NSString *dateString = [Utilities stringFromDate:dateNow withFormat:[self dateFormatMounthYear]];
     
     CDBudget *currentBudget = [[CoreDataManager sharedDataManager] getBudgetForMounth:dateString];
-    NSDecimalNumber *income = currentBudget.incomeTotal;
+    
+    NSDecimalNumber *income = [[CoreDataManager sharedDataManager] recalculationIncomesForBudget:currentBudget];
     
     if ([income doubleValue] == 0) {
         [self createAlertViewSetBudget];
@@ -56,6 +57,14 @@
     [super viewDidDisappear:animated];
     
     self.title = nil;
+}
+
+
+#pragma mark -Action methods
+
+- (IBAction)settings:(id)sender {
+    SettingsViewController *settingsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
+    [self.navigationController pushViewController:settingsVC animated:YES];
 }
 
 
@@ -100,20 +109,11 @@
             
             CDBudget *currentBudget = [[CoreDataManager sharedDataManager] getBudgetForMounth:dateString];
             
-            [[CoreDataManager sharedDataManager] recalculationBudget:currentBudget];
         }
         else {
             // бюджет з автоматичними параметрами
         }
     }
-}
-
-
-#pragma mark -Action methods
-
-- (IBAction)settings:(id)sender {
-    SettingsViewController *settingsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
-    [self.navigationController pushViewController:settingsVC animated:YES];
 }
 
 
