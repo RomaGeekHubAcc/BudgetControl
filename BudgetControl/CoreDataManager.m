@@ -16,10 +16,6 @@
 
 @interface CoreDataManager ()
 
-@property (nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-
 @end
 
 @implementation CoreDataManager

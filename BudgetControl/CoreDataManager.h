@@ -12,6 +12,11 @@
 
 @interface CoreDataManager : NSObject
 
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+
 +(CoreDataManager*) sharedDataManager;
 
 -(CDBudget*) getBudgetForMounth:(NSString*)mounth;

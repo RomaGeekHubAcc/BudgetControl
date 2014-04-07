@@ -24,4 +24,7 @@
 - (void)addExpenses:(NSSet *)values;
 - (void)removeExpenses:(NSSet *)values;
 
+
++(CDExpenseCategory*) expenseCatagoryWithName:(NSString*)name inContext:(NSManagedObjectContext*)context;
+
 @end
