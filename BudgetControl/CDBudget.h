@@ -33,4 +33,8 @@
 
 +(CDBudget*) budgetWithDate:(NSString*)date inContext:(NSManagedObjectContext*)context;
 
+
+-(NSDecimalNumber*) recalculationExpenseForBudget;
+-(NSDecimalNumber*) recalculationIncomesForBudget;
+
 @end

@@ -1,14 +1,16 @@
 //
-//  HomeViewController.h
+//  NewExpenseViewController.h
 //  BudgetControl
 //
-//  Created by Roma on 22.02.14.
+//  Created by Roman Rybachenko on 4/8/14.
 //  Copyright (c) 2014 Roma. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface HomeViewController : UIViewController <UIAlertViewDelegate>
+@class CDBudget;
+
+@interface NewExpenseViewController : UIViewController
 
 
 @property (nonatomic) CDBudget *budget;

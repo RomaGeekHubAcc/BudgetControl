@@ -20,6 +20,4 @@
 @property (nonatomic, retain) CDBudget *budget;
 @property (nonatomic, retain) CDIncomeCategory *category;
 
-+(CDIncome*) newIncomeWithDate:(NSDate*)date inManagedObjectContext:(NSManagedObjectContext*)context;
-
 @end

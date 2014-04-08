@@ -10,47 +10,58 @@
 #import "SettingsViewController.h"
 #import "CoreDataManager.h"
 #import "CDBudget.h"
+#import "CDExpenseCategory.h"
+#import "CDIncomeCategory.h"
+#import "NewExpenseViewController.h"
+#import "SetBudgetViewController.h"
+#import "NewIncomeViewController.h"
 
 #import "HomeViewController.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () {
+    NSArray *expenseCategories, *incomeCategories;
+    
+}
 
 
 - (IBAction)settings:(id)sender;
+- (IBAction)newExpense:(id)sender;
+- (IBAction)newIncome:(id)sender;
 
 @end
 
 
 @implementation HomeViewController
 
--(void) viewDidLoad
-{
+-(void) viewDidLoad {
+    
     [super viewDidLoad];
-
-    if (![Utilities loadUserDefaults]) {
-        [self createAlertViewNewUser];
-    }
     
-    NSDate *dateNow = [NSDate date];
-    NSString *dateString = [Utilities stringFromDate:dateNow withFormat:[self dateFormatMounthYear]];
+#warning поки що не буде різних юзерів, бо не треба, а там видно буде
+//    if (![Utilities loadUserDefaults]) {
+//        [self createAlertViewNewUser];
+//    }
     
-    CDBudget *currentBudget = [[CoreDataManager sharedDataManager] getBudgetForMounth:dateString];
+    expenseCategories = [[CoreDataManager sharedDataManager] getExpenseCategories];
     
-    NSDecimalNumber *income = [[CoreDataManager sharedDataManager] recalculationIncomesForBudget:currentBudget];
-    
-    if ([income doubleValue] == 0) {
-        [self createAlertViewSetBudget];
-        
-        
-    }
 }
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     NSDate *dateNow = [NSDate date];
-    NSString *dateString = [Utilities stringFromDate:dateNow withFormat:[self dateFormatMounthYear]];
+    NSString *dateString = [Utilities stringFromDate:dateNow withFormat:DATE_FORMAT_MONTH_YEAR];
     self.title = dateString;
+    
+    
+    CDBudget *currentBudget = [[CoreDataManager sharedDataManager] getBudgetForMounth:dateString];
+    
+    NSDecimalNumber *income = [currentBudget recalculationIncomesForBudget];
+    
+    if ([income doubleValue] == 0) {
+        [self createAlertViewSetBudget];
+        
+    }
 }
 
 -(void) viewDidDisappear:(BOOL)animated {
@@ -62,9 +73,16 @@
 
 #pragma mark -Action methods
 
-- (IBAction)settings:(id)sender {
+-(IBAction) settings:(id)sender {
     SettingsViewController *settingsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
     [self.navigationController pushViewController:settingsVC animated:YES];
+}
+
+-(IBAction) newExpense:(id)sender {
+    
+}
+
+-(IBAction) newIncome:(id)sender {
 }
 
 
@@ -85,15 +103,10 @@
     [alertView show];
 }
 
--(NSString*) dateFormatMounthYear {
-    return [NSString stringWithFormat:@"MMMM YYYY"];
-}
-
 
 #pragma mark - UIAlertViewDelegate
 
 -(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    NSLog(@"buttonIndex = %d", buttonIndex);
     if (alertView.tag == 1) {
         if (buttonIndex == 1) {
             NSString *userName = [[alertView textFieldAtIndex:0] text];
@@ -104,15 +117,33 @@
         if (buttonIndex == 1) {
 #warning  реалізація задати бюджет
             
-            NSDate *dateNow = [NSDate date];
-            NSString *dateString = [Utilities stringFromDate:dateNow withFormat:[self dateFormatMounthYear]];
-            
-            CDBudget *currentBudget = [[CoreDataManager sharedDataManager] getBudgetForMounth:dateString];
+//            NSDate *dateNow = [NSDate date];
+//            NSString *dateString = [Utilities stringFromDate:dateNow withFormat:[self dateFormatMounthYear]];
+//            
+//            CDBudget *currentBudget = [[CoreDataManager sharedDataManager] getBudgetForMounth:dateString];
             
         }
         else {
             // бюджет з автоматичними параметрами
         }
+    }
+}
+
+
+#pragma mark - Navigation
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"setBudgetController"]) {
+        SetBudgetViewController *setBudgetVC = [segue destinationViewController];
+        setBudgetVC.budgetToSet = self.budget;
+    }
+    else if ([segue.identifier isEqualToString:@"newIncomeController"]) {
+        NewIncomeViewController *setBudgetVC = [segue destinationViewController];
+        setBudgetVC.budget = self.budget;
+    }
+    else if ([segue.identifier isEqualToString:@"newExpenseController"]) {
+        NewExpenseViewController *setBudgetVC = [segue destinationViewController];
+        setBudgetVC.budget = self.budget;
     }
 }
 

@@ -9,6 +9,6 @@
 #ifndef BudgetControl_Defines_h
 #define BudgetControl_Defines_h
 
-
+#define DATE_FORMAT_MONTH_YEAR @"MMMM YYYY"
 
 #endif

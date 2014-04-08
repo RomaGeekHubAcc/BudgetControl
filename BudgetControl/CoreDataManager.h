@@ -20,8 +20,15 @@
 +(CoreDataManager*) sharedDataManager;
 
 -(CDBudget*) getBudgetForMounth:(NSString*)mounth;
--(NSDecimalNumber*) recalculationExpenseForBudget:(CDBudget*)budget;
--(NSDecimalNumber*) recalculationIncomesForBudget:(CDBudget*)budget;
+-(NSArray*) getExpenseCategories;
+-(NSArray*) getIncomeCategories;
+
+
+
+////////////////////////////////////////////////
+-(void) insertNewIncomeWithDate:(NSDate*)date incomeName:(NSString*)iName categoryName:(NSString*)iCategoryName incomeDescription:(NSString*)description money:(NSDecimalNumber*)money;
+
+
 
 @end
 

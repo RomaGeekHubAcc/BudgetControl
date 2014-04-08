@@ -28,7 +28,12 @@
 		84E9F89118B91CB400F0C9C3 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9F89018B91CB400F0C9C3 /* HomeViewController.m */; };
 		84E9F89418B91F9A00F0C9C3 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E9F89318B91F9A00F0C9C3 /* Storyboard.storyboard */; };
 		84E9F89718B9272600F0C9C3 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9F89618B9272600F0C9C3 /* Utilities.m */; };
-		A8B0F2D718F3061C008269A4 /* BudgetControl.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A8B0F2D618F3061C008269A4 /* BudgetControl.sqlite */; };
+		A85490F418F3D144007B4F7F /* MDDebugObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A85490F018F3D144007B4F7F /* MDDebugObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A85490F518F3D144007B4F7F /* MDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A85490F318F3D144007B4F7F /* MDUtils.m */; };
+		A8A0693F18F3EEB400F00ABE /* BudgetControlStart.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A8A0693E18F3EEB400F00ABE /* BudgetControlStart.sqlite */; };
+		A8A0694218F3F9FC00F00ABE /* NewExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A0694118F3F9FC00F00ABE /* NewExpenseViewController.m */; };
+		A8A0694518F4113E00F00ABE /* SetBudgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A0694418F4113E00F00ABE /* SetBudgetViewController.m */; };
+		A8A0694818F42DBD00F00ABE /* NewIncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A0694718F42DBD00F00ABE /* NewIncomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +72,19 @@
 		84E9F89318B91F9A00F0C9C3 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		84E9F89518B9272600F0C9C3 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		84E9F89618B9272600F0C9C3 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
-		A8B0F2D618F3061C008269A4 /* BudgetControl.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = BudgetControl.sqlite; path = Resourses/Sqlite/BudgetControl.sqlite; sourceTree = SOURCE_ROOT; };
+		A85490EE18F3D144007B4F7F /* MDDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDDebug.h; sourceTree = "<group>"; };
+		A85490EF18F3D144007B4F7F /* MDDebugObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDDebugObject.h; sourceTree = "<group>"; };
+		A85490F018F3D144007B4F7F /* MDDebugObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDDebugObject.m; sourceTree = "<group>"; };
+		A85490F118F3D144007B4F7F /* MDMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMacros.h; sourceTree = "<group>"; };
+		A85490F218F3D144007B4F7F /* MDUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDUtils.h; sourceTree = "<group>"; };
+		A85490F318F3D144007B4F7F /* MDUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDUtils.m; sourceTree = "<group>"; };
+		A8A0693E18F3EEB400F00ABE /* BudgetControlStart.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = BudgetControlStart.sqlite; path = Resourses/Sqlite/BudgetControlStart.sqlite; sourceTree = SOURCE_ROOT; };
+		A8A0694018F3F9FC00F00ABE /* NewExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewExpenseViewController.h; sourceTree = "<group>"; };
+		A8A0694118F3F9FC00F00ABE /* NewExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewExpenseViewController.m; sourceTree = "<group>"; };
+		A8A0694318F4113E00F00ABE /* SetBudgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetBudgetViewController.h; sourceTree = "<group>"; };
+		A8A0694418F4113E00F00ABE /* SetBudgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetBudgetViewController.m; sourceTree = "<group>"; };
+		A8A0694618F42DBD00F00ABE /* NewIncomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewIncomeViewController.h; sourceTree = "<group>"; };
+		A8A0694718F42DBD00F00ABE /* NewIncomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewIncomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +159,7 @@
 		84E9F86F18B91BC800F0C9C3 /* BudgetControl */ = {
 			isa = PBXGroup;
 			children = (
+				A85490EC18F3D144007B4F7F /* Externals */,
 				84E9F88918B91BE900F0C9C3 /* Classes */,
 				84E9F88A18B91BF800F0C9C3 /* Resourses */,
 				84E9F87018B91BC800F0C9C3 /* Supporting Files */,
@@ -210,6 +228,12 @@
 				84E9F89018B91CB400F0C9C3 /* HomeViewController.m */,
 				842C08C318BA249C001F2938 /* SettingsViewController.h */,
 				842C08C418BA249C001F2938 /* SettingsViewController.m */,
+				A8A0694618F42DBD00F00ABE /* NewIncomeViewController.h */,
+				A8A0694718F42DBD00F00ABE /* NewIncomeViewController.m */,
+				A8A0694018F3F9FC00F00ABE /* NewExpenseViewController.h */,
+				A8A0694118F3F9FC00F00ABE /* NewExpenseViewController.m */,
+				A8A0694318F4113E00F00ABE /* SetBudgetViewController.h */,
+				A8A0694418F4113E00F00ABE /* SetBudgetViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -231,10 +255,31 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		A85490EC18F3D144007B4F7F /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				A85490ED18F3D144007B4F7F /* DebugAndUtils */,
+			);
+			path = Externals;
+			sourceTree = SOURCE_ROOT;
+		};
+		A85490ED18F3D144007B4F7F /* DebugAndUtils */ = {
+			isa = PBXGroup;
+			children = (
+				A85490EE18F3D144007B4F7F /* MDDebug.h */,
+				A85490EF18F3D144007B4F7F /* MDDebugObject.h */,
+				A85490F018F3D144007B4F7F /* MDDebugObject.m */,
+				A85490F118F3D144007B4F7F /* MDMacros.h */,
+				A85490F218F3D144007B4F7F /* MDUtils.h */,
+				A85490F318F3D144007B4F7F /* MDUtils.m */,
+			);
+			path = DebugAndUtils;
+			sourceTree = "<group>";
+		};
 		A8B0F2D818F30628008269A4 /* Sqlite */ = {
 			isa = PBXGroup;
 			children = (
-				A8B0F2D618F3061C008269A4 /* BudgetControl.sqlite */,
+				A8A0693E18F3EEB400F00ABE /* BudgetControlStart.sqlite */,
 			);
 			name = Sqlite;
 			sourceTree = "<group>";
@@ -294,8 +339,8 @@
 				84E9F87C18B91BC800F0C9C3 /* Default.png in Resources */,
 				84E9F87E18B91BC800F0C9C3 /* Default@2x.png in Resources */,
 				84E9F88018B91BC800F0C9C3 /* Default-568h@2x.png in Resources */,
-				A8B0F2D718F3061C008269A4 /* BudgetControl.sqlite in Resources */,
 				84E9F89418B91F9A00F0C9C3 /* Storyboard.storyboard in Resources */,
+				A8A0693F18F3EEB400F00ABE /* BudgetControlStart.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,12 +356,17 @@
 				84E9F88318B91BC900F0C9C3 /* BudgetControl.xcdatamodeld in Sources */,
 				84E9F89118B91CB400F0C9C3 /* HomeViewController.m in Sources */,
 				84E9F89718B9272600F0C9C3 /* Utilities.m in Sources */,
+				A8A0694218F3F9FC00F00ABE /* NewExpenseViewController.m in Sources */,
+				A85490F418F3D144007B4F7F /* MDDebugObject.m in Sources */,
 				842C08C518BA249C001F2938 /* SettingsViewController.m in Sources */,
 				841A068418CC784A00D8E98A /* CoreDataManager.m in Sources */,
+				A8A0694818F42DBD00F00ABE /* NewIncomeViewController.m in Sources */,
 				84B109D018D8C85A00F59102 /* CDIncomeCategory.m in Sources */,
+				A8A0694518F4113E00F00ABE /* SetBudgetViewController.m in Sources */,
 				84B109D318D8C85A00F59102 /* CDIncome.m in Sources */,
 				84B109D618D8C85A00F59102 /* CDExpenseCategory.m in Sources */,
 				84B109D918D8C85A00F59102 /* CDBudget.m in Sources */,
+				A85490F518F3D144007B4F7F /* MDUtils.m in Sources */,
 				84B109DC18D8C85A00F59102 /* CDExpense.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
