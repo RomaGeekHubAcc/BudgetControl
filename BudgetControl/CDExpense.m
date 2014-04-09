@@ -20,11 +20,5 @@
 @dynamic budget;
 @dynamic category;
 
-+(CDExpense*) expenseWithDate:(NSDate*)date inManagedObjectContext:(NSManagedObjectContext*)context {
-    NSEntityDescription *entity = [NSEntityDescription entityForName:[[CDExpense class] description] inManagedObjectContext:context];
-    CDExpense *newExpense = [[CDExpense alloc] initWithEntity:entity insertIntoManagedObjectContext:context];
-    
-    return newExpense;
-}
 
 @end

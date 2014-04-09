@@ -20,6 +20,5 @@
 @property (nonatomic, retain) CDBudget *budget;
 @property (nonatomic, retain) CDExpenseCategory *category;
 
-+(CDExpense*) expenseWithDate:(NSDate*)date inManagedObjectContext:(NSManagedObjectContext*)context;
 
 @end

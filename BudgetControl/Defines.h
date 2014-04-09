@@ -9,6 +9,9 @@
 #ifndef BudgetControl_Defines_h
 #define BudgetControl_Defines_h
 
+
 #define DATE_FORMAT_MONTH_YEAR @"MMMM YYYY"
+#define DATE_FORMAT_DAY_MONTH_YEAR @"dd MMMM YYYY"
+
 
 #endif

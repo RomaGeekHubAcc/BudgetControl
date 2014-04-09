@@ -2,7 +2,7 @@
 //  CDBudget.h
 //  BudgetControl
 //
-//  Created by Roma on 18.03.14.
+//  Created by Roman Rybachenko on 4/9/14.
 //  Copyright (c) 2014 Roma. All rights reserved.
 //
 
@@ -13,8 +13,8 @@
 
 @interface CDBudget : NSManagedObject
 
-@property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSString * currensy;
+@property (nonatomic, retain) NSString * date;
 @property (nonatomic, retain) NSSet *expenses;
 @property (nonatomic, retain) NSSet *income;
 @end
@@ -31,10 +31,11 @@
 - (void)addIncome:(NSSet *)values;
 - (void)removeIncome:(NSSet *)values;
 
-+(CDBudget*) budgetWithDate:(NSString*)date inContext:(NSManagedObjectContext*)context;
 
 
--(NSDecimalNumber*) recalculationExpenseForBudget;
++(CDBudget*) budgetWithDate:(NSDate*)date inContext:(NSManagedObjectContext*)context;
+
 -(NSDecimalNumber*) recalculationIncomesForBudget;
+-(NSDecimalNumber*) recalculationExpenseForBudget;
 
 @end

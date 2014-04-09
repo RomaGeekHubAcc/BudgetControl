@@ -12,7 +12,6 @@
 #import "CDBudget.h"
 #import "CDExpenseCategory.h"
 #import "CDIncomeCategory.h"
-#import "NewExpenseViewController.h"
 #import "SetBudgetViewController.h"
 #import "NewIncomeViewController.h"
 
@@ -21,6 +20,9 @@
 @interface HomeViewController () {
     NSArray *expenseCategories, *incomeCategories;
     
+    __weak IBOutlet UILabel *budgetCountLabel;
+    __weak IBOutlet UILabel *expenseTotalCountLabel;
+    __weak IBOutlet UILabel *totalCountLabel;
 }
 
 
@@ -42,8 +44,17 @@
 //        [self createAlertViewNewUser];
 //    }
     
-    expenseCategories = [[CoreDataManager sharedDataManager] getExpenseCategories];
     
+//    expenseCategories = [[CoreDataManager sharedDataManager] getExpenseCategories];
+//    incomeCategories = [[CoreDataManager sharedDataManager] getIncomeCategories];
+//    for (CDExpenseCategory *exCat in expenseCategories) {
+//        NSLog(@"%@", exCat.categoryName);
+//        
+//    }
+//    for (CDIncomeCategory *exCat in incomeCategories) {
+//        NSLog(@"%@", exCat.categoryName);
+//        
+//    }
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -54,14 +65,8 @@
     self.title = dateString;
     
     
-    CDBudget *currentBudget = [[CoreDataManager sharedDataManager] getBudgetForMounth:dateString];
-    
-    NSDecimalNumber *income = [currentBudget recalculationIncomesForBudget];
-    
-    if ([income doubleValue] == 0) {
-        [self createAlertViewSetBudget];
-        
-    }
+    CDBudget *currentBudget = [[CoreDataManager sharedDataManager] getBudgetForMounth:dateNow];
+    [self showDataForBudget:currentBudget];
 }
 
 -(void) viewDidDisappear:(BOOL)animated {
@@ -87,6 +92,17 @@
 
 
 #pragma mark - Private methods
+
+-(void) showDataForBudget:(CDBudget*)budget {
+    NSDecimalNumber *income = [budget recalculationIncomesForBudget];
+    budgetCountLabel.text = [NSString stringWithFormat:@"%0.2f %@", [income doubleValue], budget.currensy];
+    
+    NSDecimalNumber *expenses = [budget recalculationExpenseForBudget];
+    expenseTotalCountLabel.text = [NSString stringWithFormat:@"%0.2f %@", [expenses doubleValue], budget.currensy];
+    
+    NSDecimalNumber *totalEnabled = [income decimalNumberBySubtracting:expenses];
+    totalCountLabel.text = [NSString stringWithFormat:@"%0.2f %@", [totalEnabled doubleValue], budget.currensy];
+}
 
 -(void) createAlertViewNewUser {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"New user" message:@"Print new userName to start" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
@@ -137,13 +153,16 @@
         SetBudgetViewController *setBudgetVC = [segue destinationViewController];
         setBudgetVC.budgetToSet = self.budget;
     }
-    else if ([segue.identifier isEqualToString:@"newIncomeController"]) {
-        NewIncomeViewController *setBudgetVC = [segue destinationViewController];
-        setBudgetVC.budget = self.budget;
+    else if ([segue.identifier isEqualToString:@"newIncome"]) {
+        NewIncomeViewController *newIncomeVC = [segue destinationViewController];
+        newIncomeVC.budget = self.budget;
+        newIncomeVC.flagIncomeYesExpenseNo = YES;
+        
     }
-    else if ([segue.identifier isEqualToString:@"newExpenseController"]) {
-        NewExpenseViewController *setBudgetVC = [segue destinationViewController];
-        setBudgetVC.budget = self.budget;
+    else if ([segue.identifier isEqualToString:@"newExpense"]) {
+        NewIncomeViewController *newExpenseVC = [segue destinationViewController];
+        newExpenseVC.budget = self.budget;
+        newExpenseVC.flagIncomeYesExpenseNo = NO;
     }
 }
 

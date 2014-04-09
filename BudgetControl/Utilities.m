@@ -49,18 +49,22 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         __dateFormatter = [[NSDateFormatter alloc]init];
+        [__dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+        [__dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     });
     return __dateFormatter;
 }
 
 +(NSDate*) dateFromString:(NSString*)string withFormat:(NSString*)format {
     [[Utilities sharedDF] setDateFormat:format];
-    return [[Utilities sharedDF] dateFromString:string];
+    NSDate *date = [[Utilities sharedDF] dateFromString:string];
+    return date;
 }
 
 +(NSString*) stringFromDate:(NSDate*)date withFormat:(NSString*)format {
     [[Utilities sharedDF] setDateFormat:format];
-    return [[Utilities sharedDF] stringFromDate:date];
+    NSString *dateStr = [[Utilities sharedDF] stringFromDate:date];
+    return dateStr;
 }
 
 @end

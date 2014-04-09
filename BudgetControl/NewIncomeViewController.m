@@ -16,7 +16,7 @@
 
 @interface NewIncomeViewController () {
 
-    NSArray *incomeCategories;
+    NSArray *categories;
     
     __weak IBOutlet UIPickerView *categoryPicker;
     __weak IBOutlet UITextField *moneyTextField;
@@ -43,7 +43,12 @@
     moneyTextField.delegate = self;
     descriptionTextView.delegate = self;
     
-    incomeCategories = [[CoreDataManager sharedDataManager] getIncomeCategories];
+    if (self.flagIncomeYesExpenseNo) {
+        categories = [[CoreDataManager sharedDataManager] getIncomeCategories];
+    }
+    else {
+        categories = [[CoreDataManager sharedDataManager] getExpensesCategories];
+    }
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -61,7 +66,13 @@
 
 -(IBAction) save:(id)sender {
     
-    [[CoreDataManager sharedDataManager] insertNewIncomeWithDate:[NSDate date] incomeName:@"" categoryName:categoryBtnOutlet.titleLabel.text incomeDescription:descriptionTextView.text money:[NSDecimalNumber decimalNumberWithString:moneyTextField.text]];
+    if (self.flagIncomeYesExpenseNo) {
+        [[CoreDataManager sharedDataManager] insertNewIncomeWithDate:[NSDate date] incomeName:@"" categoryName:categoryBtnOutlet.titleLabel.text incomeDescription:descriptionTextView.text money:[NSDecimalNumber decimalNumberWithString:moneyTextField.text]];
+    }
+    
+    else {
+        [[CoreDataManager sharedDataManager] insertNewExpenseWithDate:[NSDate date] categoryName:categoryBtnOutlet.titleLabel.text expenseDescription:descriptionTextView.text money:[NSDecimalNumber decimalNumberWithString:moneyTextField.text]];
+    }
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -104,18 +115,18 @@
 }
 
 -(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return incomeCategories.count;
+    return categories.count;
 }
 
 #pragma mark - UIPickerViewDelegate
 
 -(NSString*) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    CDIncomeCategory *category= [incomeCategories objectAtIndex:row];
+    CDIncomeCategory *category= [categories objectAtIndex:row];
     return category.categoryName;
 }
 
 -(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    CDIncomeCategory *category= [incomeCategories objectAtIndex:row];
+    CDIncomeCategory *category= [categories objectAtIndex:row];
     [categoryBtnOutlet setTitle:category.categoryName forState:UIControlStateNormal];
 }
 

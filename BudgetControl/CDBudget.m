@@ -2,11 +2,9 @@
 //  CDBudget.m
 //  BudgetControl
 //
-//  Created by Roma on 18.03.14.
+//  Created by Roman Rybachenko on 4/9/14.
 //  Copyright (c) 2014 Roma. All rights reserved.
 //
-
-#import "Utilities.h"
 
 #import "CDBudget.h"
 #import "CDExpense.h"
@@ -15,24 +13,23 @@
 
 @implementation CDBudget
 
-@dynamic date;
 @dynamic currensy;
+@dynamic date;
 @dynamic expenses;
 @dynamic income;
 
-+(CDBudget*) budgetWithDate:(NSString*)date inContext:(NSManagedObjectContext*)context {
+
++(CDBudget*) budgetWithDate:(NSDate*)date inContext:(NSManagedObjectContext*)context {
     
     CDBudget *newBudget = nil;
+    
+    NSString *dateStr = [Utilities stringFromDate:date withFormat:DATE_FORMAT_MONTH_YEAR];
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:[[CDBudget class] description] inManagedObjectContext:context];
     [fetchRequest setEntity:entityDescription];
     
-    NSDictionary *attributes = [entityDescription attributesByName];
-    NSString *attributeName = [attributes.allKeys lastObject];
-    
-#warning тут помилка - в predicate!!!
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ like %@", attributeName, date];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"date like %@", dateStr];
     
     [fetchRequest setPredicate:predicate];
     
@@ -44,7 +41,8 @@
     }
     else {
         newBudget = [[CDBudget alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:context];
-        newBudget.date = [Utilities dateFromString:date withFormat:DATE_FORMAT_MONTH_YEAR];
+        newBudget.date = dateStr;
+        newBudget.currensy = @"UAH";
     }
     return newBudget;
 }
@@ -55,7 +53,7 @@
     
     NSArray *expenses = [self.expenses allObjects];
     for (CDExpense *expense in expenses) {
-        [expensesTotal decimalNumberByAdding:expense.price];
+        expensesTotal = [expensesTotal decimalNumberByAdding:expense.price];
     }
     
     return expensesTotal;
@@ -66,10 +64,11 @@
     
     NSArray *incomes = [self.income allObjects];
     for (CDIncome *income in incomes) {
-        [incomesTotal decimalNumberByAdding:income.money];
+        incomesTotal = [incomesTotal decimalNumberByAdding:income.money];
     }
     
     return incomesTotal;
 }
+
 
 @end

@@ -14,5 +14,6 @@
 
 
 @property (nonatomic) CDBudget *budget;
+@property (nonatomic) BOOL flagIncomeYesExpenseNo;
 
 @end

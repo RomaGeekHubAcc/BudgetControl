@@ -37,11 +37,11 @@
 
 #pragma mark - Get methods
 
--(CDBudget*) getBudgetForMounth:(NSString*)mounth {
+-(CDBudget*) getBudgetForMounth:(NSDate*)mounth {
     return [CDBudget budgetWithDate:mounth inContext:self.managedObjectContext];
 }
 
--(NSArray*) getExpenseCategories {
+-(NSArray*) getExpensesCategories {
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:[[CDExpenseCategory class] description] inManagedObjectContext:self.managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     [fetchRequest setEntity:entityDescription];
@@ -62,7 +62,7 @@
     NSError *error = nil;
     NSArray *fetchedCategories = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     if (!fetchedCategories.count) {
-        $l("ExpenseCategories missing !.. ");
+        $l("IncomeCategories missing !.. ");
     }
     return fetchedCategories;
 }
@@ -70,8 +70,8 @@
 
 #pragma mark - Insert methods
 
--(void) insertNewBudgetForMounth:(NSString*)mounth {
-#warning цей метод буде потрібен, коли буде задаватись бюджет на майбутні місяці..
+-(void) insertNewBudgetForMounth:(NSDate*)mounth {
+#warning -> цей метод буде потрібен, коли буде задаватись бюджет на майбутні місяці..
     NSError *error = nil;
     
     [CDBudget budgetWithDate:mounth inContext:self.managedObjectContext];
@@ -83,20 +83,20 @@
 
 -(void) insertNewIncomeWithDate:(NSDate*)date incomeName:(NSString*)iName categoryName:(NSString*)iCategoryName incomeDescription:(NSString*)description money:(NSDecimalNumber*)money {
     
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:[[CDIncome class] description] inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:[[CDIncome class] description]
+                                                         inManagedObjectContext:self.managedObjectContext];
     
     CDIncome *newIncome = [[CDIncome alloc] initWithEntity:entityDescription
                             insertIntoManagedObjectContext:self.managedObjectContext];
+    
+    CDBudget *budget = [CDBudget budgetWithDate:date inContext:self.managedObjectContext];
+    
     newIncome.date = date;
     newIncome.incomeName = iName;
     newIncome.incomeDescription = description;
     newIncome.money = money;
     newIncome.category = [CDIncomeCategory categoryWithName:iCategoryName
                                                inContext:self.managedObjectContext];
-    
-    NSString *currentDateStr = [Utilities stringFromDate:date withFormat:DATE_FORMAT_MONTH_YEAR];
-    
-    CDBudget *budget = [CDBudget budgetWithDate:currentDateStr inContext:self.managedObjectContext];
     newIncome.budget = budget;
     
     NSError *error = nil;
@@ -105,6 +105,30 @@
     }
     else {
         $l(@"New Income saved to DB succesfully");
+    }
+}
+
+-(void) insertNewExpenseWithDate:(NSDate*)date categoryName:(NSString*)eCategoryName expenseDescription:(NSString*)description money:(NSDecimalNumber*)money {
+    
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:[[CDExpense class] description]
+                                                         inManagedObjectContext:self.managedObjectContext];
+    
+    CDBudget *budget = [CDBudget budgetWithDate:date inContext:self.managedObjectContext];
+    
+    CDExpense *newExpense = [[CDExpense alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:self.managedObjectContext];
+    newExpense.date = date;
+    newExpense.expenseDescription = description;
+    newExpense.price = money;
+    newExpense.category = [CDExpenseCategory expenseCatagoryWithName:eCategoryName
+                                                           inContext:self.managedObjectContext];
+    newExpense.budget = budget;
+    
+    NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
+        $l(@"Save to DB error -> %@", error);
+    }
+    else {
+        $l(@"New Expense saved to DB succesfully");
     }
 }
 
@@ -129,8 +153,6 @@
 
 #pragma mark - Core Data stack
 
-// Returns the managed object context for the application.
-// If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
 - (NSManagedObjectContext *)managedObjectContext
 {
     if (_managedObjectContext != nil) {
@@ -145,8 +167,6 @@
     return _managedObjectContext;
 }
 
-// Returns the managed object model for the application.
-// If the model doesn't already exist, it is created from the application's model.
 - (NSManagedObjectModel *)managedObjectModel
 {
     if (_managedObjectModel != nil) {
@@ -157,20 +177,17 @@
     return _managedObjectModel;
 }
 
-// Returns the persistent store coordinator for the application.
-// If the coordinator doesn't already exist, it is created and the application's store added to it.
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
-{
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
     if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
     }
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"BudgetControl.sqlite"];
-    
+
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
     if (![fileManager fileExistsAtPath:[storeURL path]]) {
-        NSURL *defaultStoreURL = [[NSBundle mainBundle] URLForResource:@"BudgetControlStart" withExtension:@"sqlite"];
+        NSURL *defaultStoreURL = [[NSBundle mainBundle] URLForResource:@"BudgetControlStartDB" withExtension:@"sqlite"];
         NSError *error = nil;
         if (defaultStoreURL) {
             [fileManager copyItemAtURL:defaultStoreURL toURL:storeURL error:&error];
@@ -179,41 +196,19 @@
             }
         }
     }
-    
     NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption: @YES, NSInferMappingModelAutomaticallyOption: @YES};
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-         
-         Typical reasons for an error here include:
-         * The persistent store is not accessible;
-         * The schema for the persistent store is incompatible with current managed object model.
-         Check the error message to determine what the actual problem was.
-         
-         
-         If the persistent store is not accessible, there is typically something wrong with the file path. Often, a file URL is pointing into the application's resources directory instead of a writeable directory.
-         
-         If you encounter schema incompatibility errors during development, you can reduce their frequency by:
-         * Simply deleting the existing store:
-         [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil]
-         
-         * Performing automatic lightweight migration by passing the following dictionary as the options parameter:
-         @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES}
-         
-         Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
-         
-         */
+
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
     
     return _persistentStoreCoordinator;
 }
+
 
 #pragma mark - Application's Documents directory
 
@@ -224,6 +219,68 @@
 }
 
 @end
+
+
+//- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
+//{
+//    if (_persistentStoreCoordinator != nil) {
+//        return _persistentStoreCoordinator;
+//    }
+//    
+//    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"BudgetControl.sqlite"];
+//    
+//    NSError *error = nil;
+//    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+//    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+//        
+//        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+//        abort();
+//    }
+//    
+//    return _persistentStoreCoordinator;
+//}
+
+
+
+//-(void) hardcodeInsertsCategoriesByDefault {
+//    ////////////  IncomeCategories  //////////////////
+//    [CDIncomeCategory categoryWithName:@"Wages" inContext:self.managedObjectContext];
+//    [CDIncomeCategory categoryWithName:@"Renting" inContext:self.managedObjectContext];
+//    [CDIncomeCategory categoryWithName:@"Gifts" inContext:self.managedObjectContext];
+//    
+//    
+//    ////////////  ExpenseCategories  //////////////////
+//    [CDExpenseCategory expenseCatagoryWithName:@"General" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"Clothes" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"Food" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"Kids Stuff" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"Rent" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"House" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"Insurances" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"Health" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"Travel" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"Leisure" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"Pets" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"Books" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"Trips" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"Gifts" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"Energy/Water" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"Fuel" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"Car" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"Education" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"Sport" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"Music" inContext:self.managedObjectContext];
+//    [CDExpenseCategory expenseCatagoryWithName:@"Friends" inContext:self.managedObjectContext];
+//    
+//    NSError *error = nil;
+//    if (![self.managedObjectContext save:&error]) {
+//        $l(@"Save to DB error -> %@", error);
+//    }
+//    else {
+//        $l("Categories saved Successfully!..");
+//    }
+//}
+
 
 
 //+(CDBudget*) budgetWithDate:(NSString*)date inContext:(NSManagedObjectContext*)context {
@@ -255,41 +312,5 @@
 //}
 
 
-//-(void) hardcodeInsertsCategoriesByDefault {
-//    ////////////  IncomeCategories  //////////////////
-//    [CDIncomeCategory categoryWithName:@"Wages" inContext:self.managedObjectContext];
-//    [CDIncomeCategory categoryWithName:@"Renting" inContext:self.managedObjectContext];
-//    [CDIncomeCategory categoryWithName:@"Gifts" inContext:self.managedObjectContext];
-//
-//
-//    ////////////  ExpenseCategories  //////////////////
-//    [CDExpenseCategory expenseCatagoryWithName:@"General" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"Clothes" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"Food" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"Kids Stuff" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"Rent" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"House" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"Insurances" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"Health" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"Travel" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"Leisure" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"Pets" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"Books" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"Trips" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"Gifts" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"Energy/Water" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"Fuel" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"Car" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"Education" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"Sport" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"Music" inContext:self.managedObjectContext];
-//    [CDExpenseCategory expenseCatagoryWithName:@"Friends" inContext:self.managedObjectContext];
-//
-//    NSError *error = nil;
-//    if (![self.managedObjectContext save:&error]) {
-//        $l(@"Save to DB error -> %@", error);
-//    }
-//    else {
-//        $l("Categories saved Successfully!..");
-//    }
-//}
+
+

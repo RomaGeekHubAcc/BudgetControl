@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="11G63b" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="CDBudget" representedClassName="CDBudget" syncable="YES">
         <attribute name="currensy" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDExpense" inverseName="budget" inverseEntity="CDExpense" syncable="YES"/>
         <relationship name="income" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDIncome" inverseName="budget" inverseEntity="CDIncome" syncable="YES"/>
     </entity>
@@ -33,8 +33,8 @@
     <elements>
         <element name="CDBudget" positionX="153" positionY="9" width="128" height="105"/>
         <element name="CDExpense" positionX="342" positionY="-141" width="128" height="135"/>
-        <element name="CDIncome" positionX="342" positionY="138" width="128" height="135"/>
         <element name="CDExpenseCategory" positionX="531" positionY="-81" width="128" height="75"/>
+        <element name="CDIncome" positionX="342" positionY="138" width="128" height="135"/>
         <element name="CDIncomeCategory" positionX="529" positionY="198" width="128" height="75"/>
     </elements>
 </model>
