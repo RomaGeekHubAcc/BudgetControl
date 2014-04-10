@@ -43,8 +43,13 @@
 
 -(NSArray*) getExpensesCategories {
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:[[CDExpenseCategory class] description] inManagedObjectContext:self.managedObjectContext];
+    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     [fetchRequest setEntity:entityDescription];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"categoryName" ascending:YES];
+     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
     
     NSError *error = nil;
     NSArray *fetchedCategories = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
@@ -58,6 +63,10 @@
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:[[CDIncomeCategory class] description] inManagedObjectContext:self.managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     [fetchRequest setEntity:entityDescription];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"categoryName" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
     
     NSError *error = nil;
     NSArray *fetchedCategories = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];

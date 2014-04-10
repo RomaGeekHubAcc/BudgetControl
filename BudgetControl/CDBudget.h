@@ -37,5 +37,6 @@
 
 -(NSDecimalNumber*) recalculationIncomesForBudget;
 -(NSDecimalNumber*) recalculationExpenseForBudget;
+-(NSDecimalNumber*) totalAvailable;
 
 @end

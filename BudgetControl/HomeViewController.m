@@ -44,17 +44,6 @@
 //        [self createAlertViewNewUser];
 //    }
     
-    
-//    expenseCategories = [[CoreDataManager sharedDataManager] getExpenseCategories];
-//    incomeCategories = [[CoreDataManager sharedDataManager] getIncomeCategories];
-//    for (CDExpenseCategory *exCat in expenseCategories) {
-//        NSLog(@"%@", exCat.categoryName);
-//        
-//    }
-//    for (CDIncomeCategory *exCat in incomeCategories) {
-//        NSLog(@"%@", exCat.categoryName);
-//        
-//    }
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -62,11 +51,11 @@
     
     NSDate *dateNow = [NSDate date];
     NSString *dateString = [Utilities stringFromDate:dateNow withFormat:DATE_FORMAT_MONTH_YEAR];
-    self.title = dateString;
+//    self.title = dateString;
     
     
-    CDBudget *currentBudget = [[CoreDataManager sharedDataManager] getBudgetForMounth:dateNow];
-    [self showDataForBudget:currentBudget];
+    self.budget = [[CoreDataManager sharedDataManager] getBudgetForMounth:dateNow];
+    [self showDataForBudget:self.budget];
 }
 
 -(void) viewDidDisappear:(BOOL)animated {
@@ -84,7 +73,6 @@
 }
 
 -(IBAction) newExpense:(id)sender {
-    
 }
 
 -(IBAction) newIncome:(id)sender {
@@ -98,7 +86,7 @@
     budgetCountLabel.text = [NSString stringWithFormat:@"%0.2f %@", [income doubleValue], budget.currensy];
     
     NSDecimalNumber *expenses = [budget recalculationExpenseForBudget];
-    expenseTotalCountLabel.text = [NSString stringWithFormat:@"%0.2f %@", [expenses doubleValue], budget.currensy];
+    expenseTotalCountLabel.text = [NSString stringWithFormat:@"- %0.2f %@", [expenses doubleValue], budget.currensy];
     
     NSDecimalNumber *totalEnabled = [income decimalNumberBySubtracting:expenses];
     totalCountLabel.text = [NSString stringWithFormat:@"%0.2f %@", [totalEnabled doubleValue], budget.currensy];
@@ -151,7 +139,7 @@
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"setBudgetController"]) {
         SetBudgetViewController *setBudgetVC = [segue destinationViewController];
-        setBudgetVC.budgetToSet = self.budget;
+        setBudgetVC.currentBudget = self.budget;
     }
     else if ([segue.identifier isEqualToString:@"newIncome"]) {
         NewIncomeViewController *newIncomeVC = [segue destinationViewController];

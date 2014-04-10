@@ -13,8 +13,6 @@
 
 @interface SettingsViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *label;
-
 @end
 
 
@@ -25,7 +23,7 @@
     [super viewDidLoad];
 	
     self.title = @"Settings";
-    _label.text = @"Set budget for current mounth:\n--incomes:\n  -wages;\n  -gifts;\n  - rents;\n--expenses:\n  - something\n\nSet currensy";
+    
 }
 
 

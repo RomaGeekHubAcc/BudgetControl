@@ -11,10 +11,10 @@
 @class CDBudget;
 
 
-@interface SetBudgetViewController : UIViewController
+@interface SetBudgetViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 
-@property (nonatomic) CDBudget *budgetToSet;
+@property (nonatomic) CDBudget *currentBudget;
 
 
 @end

@@ -70,5 +70,9 @@
     return incomesTotal;
 }
 
+-(NSDecimalNumber*) totalAvailable {
+    return [[self recalculationIncomesForBudget] decimalNumberBySubtracting:[self recalculationExpenseForBudget]];
+}
+
 
 @end
