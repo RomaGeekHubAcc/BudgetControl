@@ -72,15 +72,23 @@
     [super viewWillAppear:animated];
     
     [moneyTextField becomeFirstResponder];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEnterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
     selectedCellStr = nil;
+    moneyTextField.text = @"";
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
 }
 
 #pragma mark - Action methods
+
+-(void) didEnterBackground {
+    moneyTextField.text = @"";
+}
 
 - (IBAction)save:(id)sender {
     
