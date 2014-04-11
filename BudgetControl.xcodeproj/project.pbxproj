@@ -97,6 +97,7 @@
 		A8C935A818F82E0A00E239F0 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C9359C18F82E0A00E239F0 /* menu@2x.png */; };
 		A8C935A918F82E0A00E239F0 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C9359D18F82E0A00E239F0 /* settings.png */; };
 		A8C935AA18F82E0A00E239F0 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C9359E18F82E0A00E239F0 /* settings@2x.png */; };
+		A8C935AD18F8460F00E239F0 /* CategoryElementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C935AC18F8460F00E239F0 /* CategoryElementsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -214,6 +215,8 @@
 		A8C9359C18F82E0A00E239F0 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		A8C9359D18F82E0A00E239F0 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		A8C9359E18F82E0A00E239F0 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		A8C935AB18F8460F00E239F0 /* CategoryElementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryElementsViewController.h; sourceTree = "<group>"; };
+		A8C935AC18F8460F00E239F0 /* CategoryElementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryElementsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,6 +373,8 @@
 				A8A0694418F4113E00F00ABE /* SetBudgetViewController.m */,
 				A8678B1A18F6C423009593A8 /* NewExpenseViewController.h */,
 				A8678B1B18F6C423009593A8 /* NewExpenseViewController.m */,
+				A8C935AB18F8460F00E239F0 /* CategoryElementsViewController.h */,
+				A8C935AC18F8460F00E239F0 /* CategoryElementsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -648,6 +653,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C935AD18F8460F00E239F0 /* CategoryElementsViewController.m in Sources */,
 				84E9F87618B91BC800F0C9C3 /* main.m in Sources */,
 				84E9F87A18B91BC800F0C9C3 /* AppDelegate.m in Sources */,
 				84E9F88318B91BC900F0C9C3 /* BudgetControl.xcdatamodeld in Sources */,

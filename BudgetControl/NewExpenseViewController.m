@@ -45,8 +45,6 @@
     
     moneyTextField.delegate = self;
     
-//    CDBudget *currentBudget = [[CoreDataManager sharedDataManager] getBudgetForMounth:[NSDate date]];
-    
     iconsArray = [[NSMutableArray alloc] init];
     NSArray *categories = [[CoreDataManager sharedDataManager] getExpensesCategories];
     for (CDExpenseCategory *category in categories) {
