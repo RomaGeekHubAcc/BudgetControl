@@ -201,6 +201,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.66666666669999997" green="0.50713839780000003" blue="0.15140375540000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="nEB-ea-ktf"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="U43-VI-ryR" id="ehU-Jo-jRe"/>
@@ -297,7 +298,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.66666666669999997" green="0.50713839780000003" blue="0.15140375540000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="nBv-gZ-b5A"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings.png" id="nBv-gZ-b5A"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U9x-SM-v3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -314,9 +315,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="ZCR-8N-GA3" kind="relationship" relationship="viewControllers" id="DWb-ak-YyN"/>
                         <segue destination="NiY-sc-L8B" kind="relationship" relationship="viewControllers" id="fPo-9q-JUe"/>
                         <segue destination="mwD-ZX-3mF" kind="relationship" relationship="viewControllers" id="7tB-ed-lRK"/>
-                        <segue destination="ZCR-8N-GA3" kind="relationship" relationship="viewControllers" id="DWb-ak-YyN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ATF-5e-iZg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -327,7 +328,7 @@
         <scene sceneID="2ID-Cc-25J">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NiY-sc-L8B" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Budget State" id="M1n-Zc-g5T"/>
+                    <tabBarItem key="tabBarItem" title="Budget State" image="budgetState.png" id="M1n-Zc-g5T"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Lc-7O-MtD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -409,7 +410,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.66666666669999997" green="0.50713839780000003" blue="0.15140375540000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="NewExpense" id="b4o-1F-h5u"/>
+                    <tabBarItem key="tabBarItem" title="NewExpense" image="expense.png" id="b4o-1F-h5u"/>
                     <connections>
                         <outlet property="moneyTextField" destination="Uch-No-5IG" id="O5k-EF-iym"/>
                         <outlet property="myCollectionView" destination="PIZ-Ce-bmz" id="hXY-H4-lKb"/>
@@ -420,6 +421,11 @@
             <point key="canvasLocation" x="1080" y="629"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="budgetState.png" width="50" height="50"/>
+        <image name="expense.png" width="50" height="50"/>
+        <image name="settings.png" width="25" height="25"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

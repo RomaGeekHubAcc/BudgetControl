@@ -38,5 +38,6 @@
 -(NSDecimalNumber*) recalculationIncomesForBudget;
 -(NSDecimalNumber*) recalculationExpenseForBudget;
 -(NSDecimalNumber*) totalAvailable;
+-(BOOL) checkCanAffordThisExpense:(NSDecimalNumber*)expenseDecimalNumber;
 
 @end

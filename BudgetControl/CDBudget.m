@@ -74,5 +74,18 @@
     return [[self recalculationIncomesForBudget] decimalNumberBySubtracting:[self recalculationExpenseForBudget]];
 }
 
+-(BOOL) checkCanAffordThisExpense:(NSDecimalNumber*)expenseDecimalNumber {
+    NSDecimalNumber *totalAvailable = [self totalAvailable];
+    if ([totalAvailable doubleValue] < 0) {
+        return  NO;
+    }
+    totalAvailable = [totalAvailable decimalNumberBySubtracting:expenseDecimalNumber];
+    if ([totalAvailable doubleValue] < 0) {
+        return NO;
+    }
+    
+    return YES;
+}
+
 
 @end

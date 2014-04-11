@@ -45,7 +45,7 @@
     
     moneyTextField.delegate = self;
     
-    CDBudget *currentBudget = [[CoreDataManager sharedDataManager] getBudgetForMounth:[NSDate date]];
+//    CDBudget *currentBudget = [[CoreDataManager sharedDataManager] getBudgetForMounth:[NSDate date]];
     
     iconsArray = [[NSMutableArray alloc] init];
     NSArray *categories = [[CoreDataManager sharedDataManager] getExpensesCategories];
@@ -79,10 +79,23 @@
 -(void) viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
+    if (moneyTextField.text.length > 0) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Expense not saved!" message:@"Wish you save this Expense?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Save", nil];
+        alertView.tag = 111;
+        [alertView show];
+        return;
+    }
+    
     selectedCellStr = nil;
     moneyTextField.text = @"";
+}
+
+-(void) viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
 }
+
 
 #pragma mark - Action methods
 
@@ -93,20 +106,31 @@
 - (IBAction)save:(id)sender {
     
     if (![moneyTextField.text doubleValue]) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Wrong Parametr!" message:@"Сosts can not be with the sign '-' or '0'. Enter the amount of costs" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alertView show];
+        [self showAlertViewWithTitle:@"Wrong Parametr!"
+                             message:@"Сosts can not be with the sign '-' or '0'. Enter the amount of costs"
+                   cancelButtonTitle:@"OK"];
         return;
     }
     if (!selectedCellStr) {
         selectedCellStr = @"General";
     }
-
+    
+    CDBudget *currentBudget = [[CoreDataManager sharedDataManager] getBudgetForMounth:[NSDate date]];
+    if (![currentBudget checkCanAffordThisExpense:[NSDecimalNumber decimalNumberWithString:moneyTextField.text]]) {
+        [self showAlertViewWithTitle:@"Warning!"
+                             message:@"This Expense is Not available"
+                   cancelButtonTitle:@"Cancel"];
+        return;
+    }
     
     [[CoreDataManager sharedDataManager] insertNewExpenseWithDate:[NSDate date]
                                                      categoryName:selectedCellStr
                                                expenseDescription:@""
                                                             money:[NSDecimalNumber decimalNumberWithString:moneyTextField.text]];
     [self.view endEditing:YES];
+    
+    selectedCellStr = nil;
+    moneyTextField.text = @"";
 }
 
 
@@ -177,11 +201,21 @@
     return iconName;
 }
 
-//#pragma mark - UIAlertViewDelegate
-//
-//-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-//    
-//}
+
+#pragma mark - UIAlertViewDelegate
+
+-(void) showAlertViewWithTitle:(NSString*)title message:(NSString*)message cancelButtonTitle:(NSString*)cancelBtnTitle {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancelBtnTitle otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
+-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (alertView.tag == 111) {
+        if (buttonIndex == 1) {
+            [self save:nil];
+        }
+    }
+}
 
 
 #pragma mark - Removing Keyboard
