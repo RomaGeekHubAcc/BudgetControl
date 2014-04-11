@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>50EF3785-5202-4D80-8E06-F8E129147F39</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BudgetControl</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DF7A9253-19F2-49E0-84C3-6D7CA2077E0F</key>
+		<string>ssh://github.com/RomaGeekHubAcc/BudgetControl.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BudgetControl.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DF7A9253-19F2-49E0-84C3-6D7CA2077E0F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/RomaGeekHubAcc/BudgetControl.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DF7A9253-19F2-49E0-84C3-6D7CA2077E0F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DF7A9253-19F2-49E0-84C3-6D7CA2077E0F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BudgetControl</string>
+		</dict>
+	</array>
+</dict>
+</plist>

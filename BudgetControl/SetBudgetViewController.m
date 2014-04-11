@@ -43,26 +43,29 @@
     tableView.dataSource = self;
     
     self.title = self.currentBudget.date;
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     incomeArray = [[NSMutableArray alloc] init];
     expensesArray = [[NSMutableArray alloc] init];
     
     [incomeArray addObjectsFromArray:[self.currentBudget.income allObjects]];
+    incomeArray = (NSMutableArray*)[self sortIncomeOrExpenseArray:incomeArray];
+    
     [expensesArray addObjectsFromArray:[self.currentBudget.expenses allObjects]];
+    expensesArray = (NSMutableArray*)[self sortIncomeOrExpenseArray:expensesArray];
     
     sectionsArray = [NSMutableArray arrayWithObjects:incomeArray, expensesArray, nil];
+    
+    
+    [tableView reloadData];
 }
 
 
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
+#pragma mark - Action methods
 
 - (IBAction)cancel:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:YES];
@@ -173,6 +176,18 @@
         imageName = @"Kids Stuff.png";
     }
     return imageName;
+}
+
+#warning method not work
+-(NSArray*) sortIncomeOrExpenseArray:(NSArray*)arrayToSort {
+    // сортування по алфавіту й даті
+    NSSortDescriptor *sortDescrName = [[NSSortDescriptor alloc] initWithKey:@"category.categoryName" ascending:YES];
+    NSSortDescriptor *sortDescrDate = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
+    NSArray *sortDescriptors = @[sortDescrName, sortDescrDate];
+    
+    NSArray *sortedArray = [arrayToSort sortedArrayUsingDescriptors:sortDescriptors];
+    
+    return sortedArray;
 }
 
 

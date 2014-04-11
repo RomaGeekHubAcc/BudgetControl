@@ -71,9 +71,10 @@
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [moneyTextField becomeFirstResponder];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEnterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    
+    [moneyTextField becomeFirstResponder];
+    [myCollectionView reloadData];
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
@@ -124,7 +125,7 @@
     }
     
     [[CoreDataManager sharedDataManager] insertNewExpenseWithDate:[NSDate date]
-                                                     categoryName:selectedCellStr
+                                                     categoryName:[self categoryNameFromSelectedIconName:selectedCellStr]
                                                expenseDescription:@""
                                                             money:[NSDecimalNumber decimalNumberWithString:moneyTextField.text]];
     [self.view endEditing:YES];
