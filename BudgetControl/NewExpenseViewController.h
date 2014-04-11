@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewExpenseViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface NewExpenseViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UITextFieldDelegate, UIAlertViewDelegate>
 
 @end

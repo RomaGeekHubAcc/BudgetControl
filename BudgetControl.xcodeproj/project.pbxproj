@@ -85,10 +85,11 @@
 		A8678B1F18F6CE25009593A8 /* IconCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8678B1E18F6CE25009593A8 /* IconCollectionViewCell.m */; };
 		A8678B2618F6DC7D009593A8 /* Energy-Water.png in Resources */ = {isa = PBXBuildFile; fileRef = A8678B2418F6DC7D009593A8 /* Energy-Water.png */; };
 		A8678B2718F6DC7D009593A8 /* Energy-Water@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8678B2518F6DC7D009593A8 /* Energy-Water@2x.png */; };
-		A8678B2E18F6DEB6009593A8 /* Children.png in Resources */ = {isa = PBXBuildFile; fileRef = A8678B2C18F6DEB6009593A8 /* Children.png */; };
-		A8678B2F18F6DEB6009593A8 /* Children@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8678B2D18F6DEB6009593A8 /* Children@2x.png */; };
 		A8678B3218F6EB84009593A8 /* borderSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = A8678B3018F6EB84009593A8 /* borderSelected.png */; };
 		A8678B3318F6EB84009593A8 /* borderSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8678B3118F6EB84009593A8 /* borderSelected@2x.png */; };
+		A88E569018F7C80B007E70BC /* BudgetControlStartDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A88E568F18F7C80B007E70BC /* BudgetControlStartDB.sqlite */; };
+		A88E569718F7FFE4007E70BC /* Kids-Stuff.png in Resources */ = {isa = PBXBuildFile; fileRef = A88E569518F7FFE4007E70BC /* Kids-Stuff.png */; };
+		A88E569818F7FFE4007E70BC /* Kids-Stuff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A88E569618F7FFE4007E70BC /* Kids-Stuff@2x.png */; };
 		A8A0694518F4113E00F00ABE /* SetBudgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A0694418F4113E00F00ABE /* SetBudgetViewController.m */; };
 		A8A0694818F42DBD00F00ABE /* NewIncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A0694718F42DBD00F00ABE /* NewIncomeViewController.m */; };
 		A8A0694B18F5329800F00ABE /* CDBudget.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A0694A18F5329800F00ABE /* CDBudget.m */; };
@@ -194,10 +195,11 @@
 		A8678B1E18F6CE25009593A8 /* IconCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconCollectionViewCell.m; sourceTree = "<group>"; };
 		A8678B2418F6DC7D009593A8 /* Energy-Water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Energy-Water.png"; sourceTree = "<group>"; };
 		A8678B2518F6DC7D009593A8 /* Energy-Water@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Energy-Water@2x.png"; sourceTree = "<group>"; };
-		A8678B2C18F6DEB6009593A8 /* Children.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Children.png; sourceTree = "<group>"; };
-		A8678B2D18F6DEB6009593A8 /* Children@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Children@2x.png"; sourceTree = "<group>"; };
 		A8678B3018F6EB84009593A8 /* borderSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = borderSelected.png; sourceTree = "<group>"; };
 		A8678B3118F6EB84009593A8 /* borderSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "borderSelected@2x.png"; sourceTree = "<group>"; };
+		A88E568F18F7C80B007E70BC /* BudgetControlStartDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = BudgetControlStartDB.sqlite; sourceTree = "<group>"; };
+		A88E569518F7FFE4007E70BC /* Kids-Stuff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Kids-Stuff.png"; sourceTree = "<group>"; };
+		A88E569618F7FFE4007E70BC /* Kids-Stuff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Kids-Stuff@2x.png"; sourceTree = "<group>"; };
 		A8A0694318F4113E00F00ABE /* SetBudgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetBudgetViewController.h; sourceTree = "<group>"; };
 		A8A0694418F4113E00F00ABE /* SetBudgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetBudgetViewController.m; sourceTree = "<group>"; };
 		A8A0694618F42DBD00F00ABE /* NewIncomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewIncomeViewController.h; sourceTree = "<group>"; };
@@ -320,7 +322,7 @@
 				A8678AAA18F6AD08009593A8 /* Images */,
 				84E9F89318B91F9A00F0C9C3 /* Storyboard.storyboard */,
 				84E9F89218B91CE200F0C9C3 /* CoreData */,
-				A8678AA118F53861009593A8 /* Sqlite */,
+				A88E568E18F7C80B007E70BC /* Sqlite */,
 			);
 			name = Resourses;
 			sourceTree = "<group>";
@@ -402,14 +404,6 @@
 			path = DebugAndUtils;
 			sourceTree = "<group>";
 		};
-		A8678AA118F53861009593A8 /* Sqlite */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Sqlite;
-			path = Resourses/Sqlite;
-			sourceTree = SOURCE_ROOT;
-		};
 		A8678AAA18F6AD08009593A8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,8 +433,8 @@
 		A8678AAE18F6AD30009593A8 /* ExpensesIcons */ = {
 			isa = PBXGroup;
 			children = (
-				A8678B2C18F6DEB6009593A8 /* Children.png */,
-				A8678B2D18F6DEB6009593A8 /* Children@2x.png */,
+				A88E569518F7FFE4007E70BC /* Kids-Stuff.png */,
+				A88E569618F7FFE4007E70BC /* Kids-Stuff@2x.png */,
 				A8678B2418F6DC7D009593A8 /* Energy-Water.png */,
 				A8678B2518F6DC7D009593A8 /* Energy-Water@2x.png */,
 				A8678AAF18F6AD30009593A8 /* Books.png */,
@@ -498,6 +492,15 @@
 			path = IncomeIcons;
 			sourceTree = "<group>";
 		};
+		A88E568E18F7C80B007E70BC /* Sqlite */ = {
+			isa = PBXGroup;
+			children = (
+				A88E568F18F7C80B007E70BC /* BudgetControlStartDB.sqlite */,
+			);
+			name = Sqlite;
+			path = Resourses/Sqlite;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -551,7 +554,6 @@
 			files = (
 				A8678AEC18F6AD30009593A8 /* Education.png in Resources */,
 				A8678AF418F6AD30009593A8 /* Fuel.png in Resources */,
-				A8678B2E18F6DEB6009593A8 /* Children.png in Resources */,
 				A8678B0018F6AD30009593A8 /* Leisure.png in Resources */,
 				A8678B3218F6EB84009593A8 /* borderSelected.png in Resources */,
 				A8678B1718F6AD30009593A8 /* menu@2x.png in Resources */,
@@ -560,6 +562,7 @@
 				A8678B1118F6AD30009593A8 /* Gifts@2x.png in Resources */,
 				A8678AE818F6AD30009593A8 /* Car.png in Resources */,
 				A8678AF518F6AD30009593A8 /* Fuel@2x.png in Resources */,
+				A88E569018F7C80B007E70BC /* BudgetControlStartDB.sqlite in Resources */,
 				A8678AFA18F6AD30009593A8 /* House.png in Resources */,
 				A8678B0F18F6AD30009593A8 /* Trips@2x.png in Resources */,
 				A8678B1318F6AD30009593A8 /* Renting@2x.png in Resources */,
@@ -597,15 +600,16 @@
 				A8678AE518F6AD30009593A8 /* calendar@2x.png in Resources */,
 				A8678B1018F6AD30009593A8 /* Gifts.png in Resources */,
 				A8678AEB18F6AD30009593A8 /* Clothes@2x.png in Resources */,
-				A8678B2F18F6DEB6009593A8 /* Children@2x.png in Resources */,
 				A8678B0B18F6AD30009593A8 /* Sport@2x.png in Resources */,
 				A8678B0718F6AD30009593A8 /* Pets@2x.png in Resources */,
 				A8678AF918F6AD30009593A8 /* Health@2x.png in Resources */,
 				84E9F87E18B91BC800F0C9C3 /* Default@2x.png in Resources */,
 				A8678B1418F6AD30009593A8 /* Wages.png in Resources */,
 				84E9F88018B91BC800F0C9C3 /* Default-568h@2x.png in Resources */,
+				A88E569818F7FFE4007E70BC /* Kids-Stuff@2x.png in Resources */,
 				A8678AF818F6AD30009593A8 /* Health.png in Resources */,
 				A8678AF618F6AD30009593A8 /* General.png in Resources */,
+				A88E569718F7FFE4007E70BC /* Kids-Stuff.png in Resources */,
 				A8678AF218F6AD30009593A8 /* Friends.png in Resources */,
 				A8678B0C18F6AD30009593A8 /* Travel.png in Resources */,
 				84E9F89418B91F9A00F0C9C3 /* Storyboard.storyboard in Resources */,

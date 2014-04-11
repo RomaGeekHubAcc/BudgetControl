@@ -170,7 +170,7 @@
         imageName = @"Energy-Water.png";
     }
     if ([imageName isEqualToString:@"Kids Stuff.png"]) {
-        imageName = @"Children.png";
+        imageName = @"Kids Stuff.png";
     }
     return imageName;
 }

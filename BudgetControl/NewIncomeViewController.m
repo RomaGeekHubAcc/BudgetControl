@@ -67,11 +67,17 @@
 -(IBAction) save:(id)sender {
     
     if (self.flagIncomeYesExpenseNo) {
-        [[CoreDataManager sharedDataManager] insertNewIncomeWithDate:[NSDate date] incomeName:@"" categoryName:categoryBtnOutlet.titleLabel.text incomeDescription:descriptionTextView.text money:[NSDecimalNumber decimalNumberWithString:moneyTextField.text]];
+        [[CoreDataManager sharedDataManager] insertNewIncomeWithDate:[NSDate date]
+                                                          incomeName:@"" categoryName:categoryBtnOutlet.titleLabel.text
+                                                   incomeDescription:descriptionTextView.text
+                                                               money:[NSDecimalNumber decimalNumberWithString:moneyTextField.text]];
     }
     
     else {
-        [[CoreDataManager sharedDataManager] insertNewExpenseWithDate:[NSDate date] categoryName:categoryBtnOutlet.titleLabel.text expenseDescription:descriptionTextView.text money:[NSDecimalNumber decimalNumberWithString:moneyTextField.text]];
+        [[CoreDataManager sharedDataManager] insertNewExpenseWithDate:[NSDate date]
+                                                         categoryName:categoryBtnOutlet.titleLabel.text
+                                                   expenseDescription:descriptionTextView.text
+                                                                money:[NSDecimalNumber decimalNumberWithString:moneyTextField.text]];
     }
     
     [self dismissViewControllerAnimated:YES completion:nil];
