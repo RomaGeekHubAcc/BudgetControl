@@ -21,4 +21,15 @@
 @dynamic category;
 
 
+
++(NSDecimalNumber*) calculateTotalIncome:(NSArray*)array {
+    NSDecimalNumber *totalValue = [NSDecimalNumber zero];
+    
+    for (CDIncome *income in array) {
+        totalValue = [totalValue decimalNumberByAdding:income.money];
+    }
+    
+    return totalValue;
+}
+
 @end

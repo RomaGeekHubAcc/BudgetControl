@@ -21,4 +21,7 @@
 @property (nonatomic, retain) CDExpenseCategory *category;
 
 
+
++(NSDecimalNumber*) calculateTotalExpense:(NSArray*)array;
+
 @end

@@ -6,8 +6,14 @@
 //  Copyright (c) 2014 Roma. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
 
-@interface CategoryElementsViewController : UIViewController
+
+
+@interface CategoryElementsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic) NSArray *entities;
+
 
 @end

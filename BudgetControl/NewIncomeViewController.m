@@ -8,6 +8,7 @@
 
 
 #import "CoreDataManager.h"
+#import "CDBudget.h"
 #import "CDIncome.h"
 #import "CDIncomeCategory.h"
 
@@ -64,7 +65,42 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(BOOL) chackSaveThisEntity {
+    if ([moneyTextField.text doubleValue] <= 0) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Wrong Parametrs!"
+                                                            message:@"Сosts can not be with the sign '-' or '0'. Enter the amount of costs"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil, nil];
+        [alertView show];
+        return NO;
+    }
+    if ([categoryBtnOutlet.titleLabel.text isEqualToString:@"Set Category"]) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Wrong Parametrs!"
+                                                            message:@"Choose category"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil, nil];
+        [alertView show];
+        return NO;
+    }
+    if (![self.budget checkCanAffordThisExpense:[NSDecimalNumber decimalNumberWithString:moneyTextField.text]] && !self.flagIncomeYesExpenseNo) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Warning!"
+                                                            message:@"This Expense is Not available in this time"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil, nil];
+        [alertView show];
+        return NO;
+    }
+    
+    return YES;
+}
+
 -(IBAction) save:(id)sender {
+    if (![self chackSaveThisEntity]) {
+        return;
+    }
     
     if (self.flagIncomeYesExpenseNo) {
         [[CoreDataManager sharedDataManager] insertNewIncomeWithDate:[NSDate date]
@@ -103,13 +139,24 @@
 }
 
 
-#pragma mark - UITextViewDelegate methods
+#pragma mark - UITextViewDelegate
 
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     
     if ([text isEqualToString:@"\n"]) {
         [textView resignFirstResponder];
     }
+    return YES;
+}
+
+
+#pragma mark - UITextFieldDelegate
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if (!categoryPicker.hidden) {
+        categoryPicker.hidden = YES;
+    }
+    
     return YES;
 }
 

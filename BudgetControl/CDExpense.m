@@ -21,4 +21,16 @@
 @dynamic category;
 
 
++(NSDecimalNumber*) calculateTotalExpense:(NSArray*)array {
+    NSDecimalNumber *totalValue = [NSDecimalNumber zero];
+    
+    for (CDExpense *expense in array) {
+        totalValue = [totalValue decimalNumberByAdding:expense.price];
+    }
+    
+    return totalValue;
+}
+
+
+
 @end

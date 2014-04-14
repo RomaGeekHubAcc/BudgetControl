@@ -17,4 +17,6 @@
 +(NSDate*) dateFromString:(NSString*)string withFormat:(NSString*)format;
 +(NSString*) stringFromDate:(NSDate*)date withFormat:(NSString*)format;
 
++(NSString*) checkImageName:(NSString*)imageName;
+
 @end

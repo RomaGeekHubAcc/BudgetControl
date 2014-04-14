@@ -33,6 +33,16 @@
     return userDefaultsStr;
 }
 
++(NSString*) checkImageName:(NSString*)imageName {
+    if ([imageName isEqualToString:@"Energy/Water.png"]) {
+        imageName = @"Energy-Water.png";
+    }
+    if ([imageName isEqualToString:@"Kids Stuff.png"]) {
+        imageName = @"Kids Stuff.png";
+    }
+    return imageName;
+}
+
 
 #pragma mark - Private methods
 

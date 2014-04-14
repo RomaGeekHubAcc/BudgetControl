@@ -20,4 +20,7 @@
 @property (nonatomic, retain) CDBudget *budget;
 @property (nonatomic, retain) CDIncomeCategory *category;
 
+
++(NSDecimalNumber*) calculateTotalIncome:(NSArray*)array;
+
 @end

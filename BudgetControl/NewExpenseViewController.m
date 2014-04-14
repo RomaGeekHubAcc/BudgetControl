@@ -105,7 +105,7 @@
 - (IBAction)save:(id)sender {
     
     if (![moneyTextField.text doubleValue]) {
-        [self showAlertViewWithTitle:@"Wrong Parametr!"
+        [self showAlertViewWithTitle:@"Wrong Parametrs!"
                              message:@"Сosts can not be with the sign '-' or '0'. Enter the amount of costs"
                    cancelButtonTitle:@"OK"];
         return;
@@ -183,9 +183,7 @@
     
     selectedCellStr = [myCell.iconImageView.image accessibilityIdentifier];
     
-    
     [myCollectionView reloadData];
-    // TODO: Select Item
 }
 
 
