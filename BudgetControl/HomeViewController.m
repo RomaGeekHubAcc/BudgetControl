@@ -54,7 +54,7 @@
 //    self.title = dateString;
     
     
-    self.budget = [[CoreDataManager sharedDataManager] getBudgetForMounth:dateNow];
+    self.budget = [[CoreDataManager sharedDataManager] getBudgetForMounth:dateString];
     [self showDataForBudget:self.budget];
 }
 

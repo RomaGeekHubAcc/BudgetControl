@@ -19,7 +19,7 @@
 
 +(CoreDataManager*) sharedDataManager;
 
--(CDBudget*) getBudgetForMounth:(NSDate*)mounth;
+-(CDBudget*) getBudgetForMounth:(NSString*)mounth;
 -(NSArray*) getExpensesCategories;
 -(NSArray*) getIncomeCategories;
 

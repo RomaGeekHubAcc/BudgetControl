@@ -8,8 +8,9 @@
 
 @class CDBudget;
 
-@interface ChartViewController : UIViewController
+@interface ChartViewController : UIViewController //<CPTPlotDataSource>
 
 @property (nonatomic) CDBudget *currentBudget;
+@property (nonatomic) NSArray *expenses;
 
 @end

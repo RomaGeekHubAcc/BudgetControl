@@ -78,6 +78,7 @@
 -(void) chartBtnPressed {
     ChartViewController *chartVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ChartViewController"];
     chartVC.currentBudget = self.currentBudget;
+    chartVC.expenses = expensesArray;
     [self.navigationController pushViewController:chartVC animated:NO];
 }
 

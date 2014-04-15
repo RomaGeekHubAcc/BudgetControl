@@ -37,8 +37,8 @@
 
 #pragma mark - Get methods
 
--(CDBudget*) getBudgetForMounth:(NSDate*)mounth {
-    return [CDBudget budgetWithDate:mounth inContext:self.managedObjectContext];
+-(CDBudget*) getBudgetForMounth:(NSString*)date {
+    return [CDBudget budgetWithDate:date inContext:self.managedObjectContext];
 }
 
 -(NSArray*) getExpensesCategories {
@@ -79,7 +79,7 @@
 
 #pragma mark - Insert methods
 
--(void) insertNewBudgetForMounth:(NSDate*)mounth {
+-(void) insertNewBudgetForMounth:(NSString*)mounth {
 #warning -> цей метод буде потрібен, коли буде задаватись бюджет на майбутні місяці..
     NSError *error = nil;
     
@@ -98,7 +98,8 @@
     CDIncome *newIncome = [[CDIncome alloc] initWithEntity:entityDescription
                             insertIntoManagedObjectContext:self.managedObjectContext];
     
-    CDBudget *budget = [CDBudget budgetWithDate:date inContext:self.managedObjectContext];
+    NSString *dateStr = [Utilities stringFromDate:date withFormat:DATE_FORMAT_DAY_MONTH_YEAR];
+    CDBudget *budget = [CDBudget budgetWithDate:dateStr inContext:self.managedObjectContext];
     
     newIncome.date = date;
     newIncome.incomeName = iName;
@@ -122,7 +123,8 @@
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:[[CDExpense class] description]
                                                          inManagedObjectContext:self.managedObjectContext];
     
-    CDBudget *budget = [CDBudget budgetWithDate:date inContext:self.managedObjectContext];
+    NSString *dateStr = [Utilities stringFromDate:date withFormat:DATE_FORMAT_DAY_MONTH_YEAR];
+    CDBudget *budget = [CDBudget budgetWithDate:dateStr inContext:self.managedObjectContext];
     
     CDExpense *newExpense = [[CDExpense alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:self.managedObjectContext];
     newExpense.date = date;

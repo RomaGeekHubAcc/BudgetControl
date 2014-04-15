@@ -19,17 +19,15 @@
 @dynamic income;
 
 
-+(CDBudget*) budgetWithDate:(NSDate*)date inContext:(NSManagedObjectContext*)context {
++(CDBudget*) budgetWithDate:(NSString*)date inContext:(NSManagedObjectContext*)context {
     
     CDBudget *newBudget = nil;
-    
-    NSString *dateStr = [Utilities stringFromDate:date withFormat:DATE_FORMAT_MONTH_YEAR];
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:[[CDBudget class] description] inManagedObjectContext:context];
     [fetchRequest setEntity:entityDescription];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"date like %@", dateStr];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"date like %@", date];
     
     [fetchRequest setPredicate:predicate];
     
@@ -41,7 +39,7 @@
     }
     else {
         newBudget = [[CDBudget alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:context];
-        newBudget.date = dateStr;
+        newBudget.date = date;
         newBudget.currensy = @"UAH";
     }
     return newBudget;
