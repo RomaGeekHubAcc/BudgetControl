@@ -11,6 +11,7 @@
 #import "CDBudget.h"
 #import "CDIncome.h"
 #import "CDIncomeCategory.h"
+#import "CDExpenseCategory.h"
 
 #import "NewIncomeViewController.h"
 
@@ -123,6 +124,16 @@
     [self.view endEditing:YES];
     if (categoryPicker.hidden) {
         categoryPicker.hidden = NO;
+        if ([categoryBtnOutlet.titleLabel.text isEqualToString:@"Set Category"]) {
+            if ([[categories objectAtIndex:0] isMemberOfClass:[CDIncomeCategory class]]) {
+                CDIncomeCategory *incomeCat = [categories objectAtIndex:0];
+                [categoryBtnOutlet setTitle:incomeCat.categoryName forState:UIControlStateNormal];
+            }
+            else if ([[categories objectAtIndex:0] isMemberOfClass:[CDExpenseCategory class]]) {
+                CDExpenseCategory *expenseCat = [categories objectAtIndex:0];
+                [categoryBtnOutlet setTitle:expenseCat.categoryName forState:UIControlStateNormal];
+            }
+        }
     }
     else {
         categoryPicker.hidden = YES;
