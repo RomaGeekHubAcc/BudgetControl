@@ -36,13 +36,7 @@
 @implementation HomeViewController
 
 -(void) viewDidLoad {
-    
     [super viewDidLoad];
-    
-#warning поки що не буде різних юзерів, бо не треба, а там видно буде
-//    if (![Utilities loadUserDefaults]) {
-//        [self createAlertViewNewUser];
-//    }
     
 }
 

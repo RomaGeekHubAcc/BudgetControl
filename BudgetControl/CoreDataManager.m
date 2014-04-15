@@ -98,7 +98,7 @@
     CDIncome *newIncome = [[CDIncome alloc] initWithEntity:entityDescription
                             insertIntoManagedObjectContext:self.managedObjectContext];
     
-    NSString *dateStr = [Utilities stringFromDate:date withFormat:DATE_FORMAT_DAY_MONTH_YEAR];
+    NSString *dateStr = [Utilities stringFromDate:date withFormat:DATE_FORMAT_MONTH_YEAR];
     CDBudget *budget = [CDBudget budgetWithDate:dateStr inContext:self.managedObjectContext];
     
     newIncome.date = date;
@@ -123,7 +123,7 @@
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:[[CDExpense class] description]
                                                          inManagedObjectContext:self.managedObjectContext];
     
-    NSString *dateStr = [Utilities stringFromDate:date withFormat:DATE_FORMAT_DAY_MONTH_YEAR];
+    NSString *dateStr = [Utilities stringFromDate:date withFormat:DATE_FORMAT_MONTH_YEAR];
     CDBudget *budget = [CDBudget budgetWithDate:dateStr inContext:self.managedObjectContext];
     
     CDExpense *newExpense = [[CDExpense alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:self.managedObjectContext];

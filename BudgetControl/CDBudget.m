@@ -41,6 +41,10 @@
         newBudget = [[CDBudget alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:context];
         newBudget.date = date;
         newBudget.currensy = @"UAH";
+        if (![context save:&error]) {
+            $l(@"Inserted budget for mounth error -> %@", error);
+        }
+        
     }
     return newBudget;
 }

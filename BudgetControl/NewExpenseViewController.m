@@ -114,7 +114,7 @@
         selectedCellStr = @"General";
     }
     
-    CDBudget *currentBudget = [[CoreDataManager sharedDataManager] getBudgetForMounth:[NSDate date]];
+    CDBudget *currentBudget = [[CoreDataManager sharedDataManager] getBudgetForMounth:[Utilities stringFromDate:[NSDate date] withFormat:DATE_FORMAT_MONTH_YEAR]];
     if (![currentBudget checkCanAffordThisExpense:[NSDecimalNumber decimalNumberWithString:moneyTextField.text]]) {
         [self showAlertViewWithTitle:@"Warning!"
                              message:@"This Expense is Not available"

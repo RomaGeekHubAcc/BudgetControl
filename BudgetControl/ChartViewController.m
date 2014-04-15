@@ -50,6 +50,7 @@
     CDBudget *budget = [[CoreDataManager sharedDataManager] getBudgetForMounth:self.currentBudget.date];
     self.currentBudget = budget;
     arrayForChart = (NSMutableArray*)[self configureArrayForChartWithBudget:budget];
+    [self.hostView.hostedGraph reloadData];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -103,7 +104,13 @@
         NSDictionary *dict = [arrayForChart objectAtIndex:index];
         
         NSDecimalNumber *totalIncome = [self.currentBudget recalculationIncomesForBudget];
-        NSDecimalNumber *persents = [[dict objectForKey:CHART_VALUE_KEY] decimalNumberByDividingBy:totalIncome];
+        NSDecimalNumber *persents = [NSDecimalNumber zero];
+        if ([totalIncome doubleValue] > 0) {
+            persents = [[dict objectForKey:CHART_VALUE_KEY] decimalNumberByDividingBy:totalIncome];
+        }
+        else {
+            return @"N/A";
+        }
         
         NSString *legendStr = [NSString stringWithFormat:@"%@, %0.1f%%", [dict objectForKey:CHART_LABEL_KEY], [persents doubleValue] *100.0f];
         return legendStr;
@@ -241,11 +248,16 @@
     theLegend.numberOfColumns = 2;
     theLegend.fill = [CPTFill fillWithColor:[CPTColor clearColor]];
     theLegend.borderLineStyle = [CPTLineStyle lineStyle];
-    theLegend.cornerRadius = 5.0;
+    theLegend.cornerRadius = 10.0;
+    
+    theLegend.paddingLeft	  = 10.0;
+    theLegend.paddingTop	  = 10.0;
+    theLegend.paddingRight	  = 10.0;
+    theLegend.paddingBottom	  = 10.0;
     // 4 - Add legend to graph
     graph.legend = theLegend;
     graph.legendAnchor = CPTRectAnchorBottomLeft;
-    graph.legendDisplacement = CGPointMake(20, 100); // це зміщення таблички
+    graph.legendDisplacement = CGPointMake(20, 20); // це зміщення таблички
     
 }
 

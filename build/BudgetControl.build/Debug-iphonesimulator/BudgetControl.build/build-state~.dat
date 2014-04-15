@@ -1,432 +1,0 @@
-TBudgetControl
-v5
-r1
-cCheck dependencies
-cProcessInfoPlistFile /Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/Info.plist BudgetControl/BudgetControl-Info.plist
-cDataModelVersionCompile /Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/BudgetControl.momd /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/BudgetControl.xcdatamodeld
-cProcessPCH /var/folders/vk/fx0gr1fs2v91c023795k_61m0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BudgetControl-Prefix-aogqmnqlarphpagwhaxlxqlnuwvy/BudgetControl-Prefix.pch.pth BudgetControl/BudgetControl-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/main.o /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/AppDelegate.o /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/HomeViewController.o /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/HomeViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/Utilities.o /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/Utilities.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/SettingsViewController.o /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/SettingsViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CoreDataManager.o /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CoreDataManager.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CDIncomeCategory.o /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDIncomeCategory.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk
-c0000000050EDEAFB0000000000000110
-t1357769467
-s272
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/CoreData.framework/CoreData
-c000000005173E3E2000000000030F580
-t1366549474
-s3208576
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.h
-c000000005173E3E1000000000000053B
-t1366549473
-s1339
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000005173E3E20000000000228FE0
-t1366549474
-s2265056
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000005173E3E500000000003DDFA0
-t1366549477
-s4054944
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c000000005173E3E400000000000015F7
-t1366549476
-s5623
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c000000005173E3EB0000000000000E8D
-t1366549483
-s3725
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000005173E3EF0000000000AB6230
-t1366549487
-s11231792
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/include/Availability.h
-c000000005173E4080000000000001B73
-t1366549512
-s7027
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/AppDelegate.m
-c000000005309022A0000000000001B42
-t1393099306
-s6978
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/BudgetControl-Prefix.pch
-c000000005308E448000000000000016B
-t1393091656
-s363
-i<Availability.h>
-i<UIKit/UIKit.h>
-i<Foundation/Foundation.h>
-i<CoreData/CoreData.h>
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/BudgetControl.xcdatamodeld
-c000000005326DA4C0000000000000088
-t1395055180
-s136
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDBudget.m
-c000000005326E3B7000000000000057F
-t1395057591
-s1407
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDExpenseCategory.m
-c000000005326DA780000000000000152
-t1395055224
-s338
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDIncomeCategory.m
-c000000005326DA78000000000000014A
-t1395055224
-s330
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CoreDataManager.m
-c000000005326E3F90000000000001456
-t1395057657
-s5206
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/Default-568h@2x.png
-c00000000515C9E6200000000000048A2
-t1365024354
-s18594
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/Default.png
-c00000000515C9E62000000000000198C
-t1365024354
-s6540
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/Default@2x.png
-c00000000515C9E620000000000003EEB
-t1365024354
-s16107
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/HomeViewController.m
-c000000005326E3B80000000000000BFF
-t1395057592
-s3071
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/SettingsViewController.m
-c00000000531C48AA0000000000000226
-t1394362538
-s550
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/Storyboard.storyboard
-c00000000531C367E00000000000030BF
-t1394357886
-s12479
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/Utilities.m
-c000000005309EB5400000000000006E8
-t1393158996
-s1768
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/en.lproj/InfoPlist.strings
-c000000005308E448000000000000002D
-t1393091656
-s45
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/main.m
-c000000005308E4480000000000000149
-t1393091656
-s329
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/AppDelegate.o
-t2
-s0
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/BudgetControl.LinkFileList
-c000000005326E4000000000000000552
-t1395057664
-s1362
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CDBudget.o
-t2
-s0
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CDExpenseCategory.o
-t2
-s0
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CDIncomeCategory.o
-t2
-s0
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CoreDataManager.o
-t2
-s0
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/HomeViewController.o
-t2
-s0
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/SettingsViewController.o
-t2
-s0
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/Utilities.o
-t2
-s0
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/main.o
-t2
-s0
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app
-t2
-s0
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app.dSYM
-t2
-s0
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/BudgetControl
-t2
-s0
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/BudgetControl.momd
-t2
-s0
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/Default-568h@2x.png
-t2
-s0
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/Default.png
-t2
-s0
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/Default@2x.png
-t2
-s0
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/Info.plist
-t2
-s0
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/PkgInfo
-t2
-s0
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/Storyboard.storyboardc
-t2
-s0
-
-N/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/en.lproj/InfoPlist.strings
-t2
-s0
-
-N/var/folders/vk/fx0gr1fs2v91c023795k_61m0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BudgetControl-Prefix-aogqmnqlarphpagwhaxlxqlnuwvy/BudgetControl-Prefix.pch.pth
-t2
-s0
-
-NBudgetControl/BudgetControl-Info.plist
-c000000005308E90C00000000000005ED
-t1393092876
-s1517
-
-CBuild AST from /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/AppDelegate.m
-r0
-
-CBuild AST from /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDBudget.m
-r0
-
-CBuild AST from /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDExpenseCategory.m
-r0
-
-CBuild AST from /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDIncomeCategory.m
-r0
-
-CBuild AST from /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CoreDataManager.m
-r0
-
-CBuild AST from /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/HomeViewController.m
-r0
-
-CBuild AST from /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/SettingsViewController.m
-r0
-
-CBuild AST from /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/Utilities.m
-r0
-
-CBuild AST from /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/main.m
-r0
-
-CCheck dependencies
-r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies6d91e47f1bd7b841^83a300801bd7b841^---0#1#0#--18"Check dependencies36"49459147-1D3C-4BD9-9241-708ACEDA5637-
-
-CCompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/AppDelegate.o /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s416750466.502386
-e416750466.681923
-r1
-xCompileC
-xbuild/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/AppDelegate.o
-x/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/AppDelegate.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection82"Compile /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/AppDelegate.mf4de80821bd7b841^6092ae821bd7b841^---0#0#0#-19%DVTDocumentLocation2@90"file://localhost/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/AppDelegate.m0000000000000000^3705"CompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/AppDelegate.o BudgetControl/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/admin/Documents/iOS_progs/BudgetControl    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-generated-files.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-own-target-headers.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-all-target-headers.hmap -iquote /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-project-headers.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/DerivedSources/i386 -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/DerivedSources -F/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator -include /var/folders/vk/fx0gr1fs2v91c023795k_61m0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BudgetControl-Prefix-aogqmnqlarphpagwhaxlxqlnuwvy/BudgetControl-Prefix.pch -MMD -MT dependencies -MF /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/AppDelegate.d --serialize-diagnostics /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/AppDelegate.dia -c /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/AppDelegate.m -o /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/AppDelegate.o36"A04C3D09-95E4-45C4-8E95-A744FDFCF234-
-
-CCompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CDBudget.o /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDBudget.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-r0
-
-CCompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CDExpenseCategory.o /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDExpenseCategory.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-r0
-
-CCompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CDIncomeCategory.o /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDIncomeCategory.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s416750467.181731
-e416750467.316519
-r1
-xCompileC
-xbuild/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CDIncomeCategory.o
-x/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDIncomeCategory.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDIncomeCategory.m17ba2e831bd7b841^753a54831bd7b841^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDIncomeCategory.m0000000000000000^3735"CompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CDIncomeCategory.o BudgetControl/CDIncomeCategory.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/admin/Documents/iOS_progs/BudgetControl    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-generated-files.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-own-target-headers.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-all-target-headers.hmap -iquote /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-project-headers.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/DerivedSources/i386 -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/DerivedSources -F/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator -include /var/folders/vk/fx0gr1fs2v91c023795k_61m0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BudgetControl-Prefix-aogqmnqlarphpagwhaxlxqlnuwvy/BudgetControl-Prefix.pch -MMD -MT dependencies -MF /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CDIncomeCategory.d --serialize-diagnostics /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CDIncomeCategory.dia -c /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CDIncomeCategory.m -o /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CDIncomeCategory.o36"8AE46578-D5E4-4F4B-B52F-942A2A35EE24-
-
-CCompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CoreDataManager.o /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CoreDataManager.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s416750467.074056
-e416750467.215169
-r0
-xCompileC
-xbuild/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CoreDataManager.o
-x/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CoreDataManager.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-o/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CoreDataManager.m:51:11: error: expected method body
-o-(void) reсalculationExpensesTotalAndIncomeTotalForBudget:(CDBudget*)budget {
-o          ^
-o1 error generated.
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compile /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CoreDataManager.mab2313831bd7b841^36204a831bd7b841^-224"/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CoreDataManager.m:51:11: error: expected method body-(void) reсalculationExpensesTotalAndIncomeTotalForBudget:(CDBudget*)budget {          ^1 error generated.1(36%IDEClangDiagnosticActivityLogMessage2@20"Expected method body-416750467#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@94"file://localhost/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CoreDataManager.m0000000000000000^50#10#50#10#1325#0#11"Parse Issue--0#0#0#-19%DVTDocumentLocation4@94"file://localhost/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CoreDataManager.m0000000000000000^3729"CompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CoreDataManager.o BudgetControl/CoreDataManager.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/admin/Documents/iOS_progs/BudgetControl    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-generated-files.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-own-target-headers.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-all-target-headers.hmap -iquote /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-project-headers.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/DerivedSources/i386 -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/DerivedSources -F/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator -include /var/folders/vk/fx0gr1fs2v91c023795k_61m0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BudgetControl-Prefix-aogqmnqlarphpagwhaxlxqlnuwvy/BudgetControl-Prefix.pch -MMD -MT dependencies -MF /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CoreDataManager.d --serialize-diagnostics /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CoreDataManager.dia -c /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/CoreDataManager.m -o /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/CoreDataManager.o36"23F4E149-A3AB-4E85-8C41-09B4950BAA4F-
-
-CCompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/HomeViewController.o /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/HomeViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s416750466.683290
-e416750466.832485
-r1
-xCompileC
-xbuild/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/HomeViewController.o
-x/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/HomeViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-o/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/HomeViewController.m:94:2: warning: реалізація задати бюджет [-W#warnings]
-o#warning  реалізація задати бюджет
-o ^
-o1 warning generated.
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Compile /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/HomeViewController.m001caf821bd7b841^4032d5821bd7b841^-239"/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/HomeViewController.m:94:2: warning: реалізація задати бюджет [-W#warnings]#warning  реалізація задати бюджет ^1 warning generated.1(36%IDEClangDiagnosticActivityLogMessage2@46"реалізація задати бюджет-416750466#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@97"file://localhost/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/HomeViewController.m0000000000000000^93#1#93#1#2614#0#18"#warning Directive--0#0#0#-19%DVTDocumentLocation4@97"file://localhost/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/HomeViewController.m0000000000000000^3747"CompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/HomeViewController.o BudgetControl/HomeViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/admin/Documents/iOS_progs/BudgetControl    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-generated-files.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-own-target-headers.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-all-target-headers.hmap -iquote /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-project-headers.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/DerivedSources/i386 -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/DerivedSources -F/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator -include /var/folders/vk/fx0gr1fs2v91c023795k_61m0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BudgetControl-Prefix-aogqmnqlarphpagwhaxlxqlnuwvy/BudgetControl-Prefix.pch -MMD -MT dependencies -MF /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/HomeViewController.d --serialize-diagnostics /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/HomeViewController.dia -c /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/HomeViewController.m -o /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/HomeViewController.o36"FB72C490-CEC6-4DE1-8C4B-A59B99CC640B-
-
-CCompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/SettingsViewController.o /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/SettingsViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s416750466.956438
-e416750467.072688
-r1
-xCompileC
-xbuild/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/SettingsViewController.o
-x/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/SettingsViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Compile /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/SettingsViewController.m1f13f5821bd7b841^d2c52e831bd7b841^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/SettingsViewController.m0000000000000000^3771"CompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/SettingsViewController.o BudgetControl/SettingsViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/admin/Documents/iOS_progs/BudgetControl    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-generated-files.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-own-target-headers.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-all-target-headers.hmap -iquote /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-project-headers.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/DerivedSources/i386 -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/DerivedSources -F/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator -include /var/folders/vk/fx0gr1fs2v91c023795k_61m0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BudgetControl-Prefix-aogqmnqlarphpagwhaxlxqlnuwvy/BudgetControl-Prefix.pch -MMD -MT dependencies -MF /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/SettingsViewController.d --serialize-diagnostics /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/SettingsViewController.dia -c /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/SettingsViewController.m -o /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/SettingsViewController.o36"EBDE3565-E8FB-44E8-96E8-FFC9301215D6-
-
-CCompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/Utilities.o /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/Utilities.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s416750466.834137
-e416750466.952891
-r1
-xCompileC
-xbuild/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/Utilities.o
-x/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/Utilities.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection80"Compile /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/Utilities.m52b9d5821bd7b841^37dff4821bd7b841^---0#0#0#-19%DVTDocumentLocation2@88"file://localhost/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/Utilities.m0000000000000000^3693"CompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/Utilities.o BudgetControl/Utilities.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/admin/Documents/iOS_progs/BudgetControl    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-generated-files.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-own-target-headers.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-all-target-headers.hmap -iquote /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-project-headers.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/DerivedSources/i386 -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/DerivedSources -F/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator -include /var/folders/vk/fx0gr1fs2v91c023795k_61m0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BudgetControl-Prefix-aogqmnqlarphpagwhaxlxqlnuwvy/BudgetControl-Prefix.pch -MMD -MT dependencies -MF /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/Utilities.d --serialize-diagnostics /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/Utilities.dia -c /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/Utilities.m -o /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/Utilities.o36"10CB287D-4DB4-4EAA-BC24-B3F88575A219-
-
-CCompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/main.o /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s416750466.376308
-e416750466.500959
-r1
-xCompileC
-xbuild/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/main.o
-x/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/main.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection75"Compile /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/main.m6d9160821bd7b841^ff3d80821bd7b841^---0#0#0#-19%DVTDocumentLocation2@83"file://localhost/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/main.m0000000000000000^3663"CompileC build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/main.o BudgetControl/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/admin/Documents/iOS_progs/BudgetControl    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-generated-files.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-own-target-headers.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-all-target-headers.hmap -iquote /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-project-headers.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/DerivedSources/i386 -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/DerivedSources -F/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator -include /var/folders/vk/fx0gr1fs2v91c023795k_61m0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BudgetControl-Prefix-aogqmnqlarphpagwhaxlxqlnuwvy/BudgetControl-Prefix.pch -MMD -MT dependencies -MF /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/main.dia -c /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/main.m -o /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/Objects-normal/i386/main.o36"B5EC4AEC-1329-4CAA-830B-05721C116D3C-
-
-CCompileStoryboard /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/Storyboard.storyboard
-r0
-
-CCopyStringsFile /Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/en.lproj/InfoPlist.strings BudgetControl/en.lproj/InfoPlist.strings
-r0
-
-CCpResource BudgetControl/Default-568h@2x.png build/Debug-iphonesimulator/BudgetControl.app/Default-568h@2x.png
-r0
-
-CCpResource BudgetControl/Default.png build/Debug-iphonesimulator/BudgetControl.app/Default.png
-r0
-
-CCpResource BudgetControl/Default@2x.png build/Debug-iphonesimulator/BudgetControl.app/Default@2x.png
-r0
-
-CDataModelVersionCompile /Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/BudgetControl.momd /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/BudgetControl.xcdatamodeld
-s416750464.023157
-e416750467.169642
-r1
-xDataModelVersionCompile
-x/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/BudgetControl.momd
-x/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/BudgetControl.xcdatamodeld
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection129"DataModelVersionCompile build/Debug-iphonesimulator/BudgetControl.app/BudgetControl.momd BudgetControl/BudgetControl.xcdatamodeld950e06801bd7b841^68ca2e831bd7b841^---0#0#0#-19%DVTDocumentLocation2@104"file://localhost/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/BudgetControl.xcdatamodeld/0000000000000000^935"DataModelVersionCompile build/Debug-iphonesimulator/BudgetControl.app/BudgetControl.momd BudgetControl/BudgetControl.xcdatamodeld    cd /Users/admin/Documents/iOS_progs/BudgetControl    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/momc -XD_MOMC_SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -XD_MOMC_IOS_TARGET_VERSION=6.1 -MOMC_PLATFORMS iphonesimulator -MOMC_PLATFORMS iphoneos -XD_MOMC_TARGET_VERSION=10.6 /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/BudgetControl.xcdatamodeld /Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/BudgetControl.momd36"029CE7EB-D0E4-42AA-A80C-B62D6FB528C0-
-
-CGenerateDSYMFile /Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app.dSYM /Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/BudgetControl
-r0
-
-CLd /Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/BudgetControl normal i386
-r0
-
-CProcessInfoPlistFile /Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/Info.plist BudgetControl/BudgetControl-Info.plist
-s416750464.009063
-e416750464.014969
-r1
-xProcessInfoPlistFile
-x/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/Info.plist
-xBudgetControl/BudgetControl-Info.plist
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection46"Process BudgetControl/BudgetControl-Info.plist377102801bd7b841^b4e603801bd7b841^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/BudgetControl-Info.plist0000000000000000^716"ProcessInfoPlistFile build/Debug-iphonesimulator/BudgetControl.app/Info.plist BudgetControl/BudgetControl-Info.plist    cd /Users/admin/Documents/iOS_progs/BudgetControl    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility BudgetControl/BudgetControl-Info.plist -genpkginfo /Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app/Info.plist36"0C30231A-6451-4BFF-A9C8-5714B6063FBA-
-
-CProcessPCH /Users/admin/Documents/iOS_progs/BudgetControl/DerivedData/BudgetControl/Index/PrecompiledHeaders/BudgetControl-Prefix-aaddhwgvsoyskqfsouhfzfjpqxpe_ast/BudgetControl-Prefix.pch.pth BudgetControl/BudgetControl-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CProcessPCH /var/folders/vk/fx0gr1fs2v91c023795k_61m0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BudgetControl-Prefix-aogqmnqlarphpagwhaxlxqlnuwvy/BudgetControl-Prefix.pch.pth BudgetControl/BudgetControl-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s416750464.023966
-e416750466.369125
-r1
-xProcessPCH
-x/var/folders/vk/fx0gr1fs2v91c023795k_61m0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BudgetControl-Prefix-aogqmnqlarphpagwhaxlxqlnuwvy/BudgetControl-Prefix.pch.pth
-xBudgetControl/BudgetControl-Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection49"Precompile BudgetControl/BudgetControl-Prefix.pch624c06801bd7b841^5b7c5e821bd7b841^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/BudgetControl-Prefix.pch0000000000000000^3697"ProcessPCH /var/folders/vk/fx0gr1fs2v91c023795k_61m0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BudgetControl-Prefix-aogqmnqlarphpagwhaxlxqlnuwvy/BudgetControl-Prefix.pch.pth BudgetControl/BudgetControl-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/admin/Documents/iOS_progs/BudgetControl    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-generated-files.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-own-target-headers.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-all-target-headers.hmap -iquote /Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/BudgetControl-project-headers.hmap -I/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/DerivedSources/i386 -I/Users/admin/Documents/iOS_progs/BudgetControl/build/BudgetControl.build/Debug-iphonesimulator/BudgetControl.build/DerivedSources -F/Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator --serialize-diagnostics /var/folders/vk/fx0gr1fs2v91c023795k_61m0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BudgetControl-Prefix-aogqmnqlarphpagwhaxlxqlnuwvy/BudgetControl-Prefix.pch.dia -c /Users/admin/Documents/iOS_progs/BudgetControl/BudgetControl/BudgetControl-Prefix.pch -o /var/folders/vk/fx0gr1fs2v91c023795k_61m0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BudgetControl-Prefix-aogqmnqlarphpagwhaxlxqlnuwvy/BudgetControl-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/vk/fx0gr1fs2v91c023795k_61m0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BudgetControl-Prefix-aogqmnqlarphpagwhaxlxqlnuwvy/BudgetControl-Prefix.pch.d36"0EEC7590-92B7-4C67-83B2-4771106C5467-
-
-CTouch /Users/admin/Documents/iOS_progs/BudgetControl/build/Debug-iphonesimulator/BudgetControl.app
-r0
-
