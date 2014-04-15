@@ -6,6 +6,11 @@
 //  Copyright (c) 2014 Roma. All rights reserved.
 //
 
+#import "CDBudget.h"
+#import "CDIncome.h"
+#import "CDExpense.h"
+#import "CDExpenseCategory.h"
+#import "CDIncomeCategory.h"
 
 #import "Utilities.h"
 
@@ -75,6 +80,79 @@
     [[Utilities sharedDF] setDateFormat:format];
     NSString *dateStr = [[Utilities sharedDF] stringFromDate:date];
     return dateStr;
+}
+
+
+
++(NSMutableArray*) sortIncomeOrExpenseArray:(NSArray*)arrayToSort {
+    // сортування по алфавіту й даті
+    NSSortDescriptor *sortDescrName = [[NSSortDescriptor alloc] initWithKey:@"category.categoryName" ascending:YES];
+    NSSortDescriptor *sortDescrDate = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
+    NSArray *sortDescriptors = @[sortDescrName, sortDescrDate];
+    
+    NSMutableArray *sortedArray = (NSMutableArray*)[arrayToSort sortedArrayUsingDescriptors:sortDescriptors];
+    
+    sortedArray = [Utilities sortEntitiesByCategories:sortedArray];
+    
+    return sortedArray;
+}
+
++(NSMutableArray*) sortEntitiesByCategories:(NSArray*)arrayToSort {
+    
+    NSMutableArray *categoryTypes = [[NSMutableArray alloc] init];
+    NSMutableArray *newSortedArr = [[NSMutableArray alloc] init];
+    NSString *categoryName = nil;
+    
+    if ([[arrayToSort lastObject] isMemberOfClass:[CDExpense class]]) {
+        for (CDExpense *exp in arrayToSort) {
+            categoryName = exp.category.categoryName;
+            if (![categoryTypes containsObject:categoryName]) {
+                [categoryTypes addObject:categoryName];
+            }
+        }
+        for (NSString *categName in categoryTypes) {
+            NSMutableArray *entitiesSameCategoryArr = [[NSMutableArray alloc] init];
+            for (CDExpense *exp in arrayToSort) {
+                if ([exp.category.categoryName isEqualToString:categName]) {
+                    [entitiesSameCategoryArr addObject:exp];
+                }
+            }
+            [newSortedArr addObject:entitiesSameCategoryArr];
+        }
+    }
+    else if ([[arrayToSort lastObject] isMemberOfClass:[CDIncome class]]){
+        for (CDIncome *income in arrayToSort) {
+            categoryName = income.category.categoryName;
+            if (![categoryTypes containsObject:categoryName]) {
+                [categoryTypes addObject:categoryName];
+            }
+        }
+        for (NSString *categName in categoryTypes) {
+            NSMutableArray *entitiesSameCategoryArr = [[NSMutableArray alloc] init];
+            for (CDIncome *income in arrayToSort) {
+                if ([income.category.categoryName isEqualToString:categName]) {
+                    [entitiesSameCategoryArr addObject:income];
+                }
+            }
+            [newSortedArr addObject:entitiesSameCategoryArr];
+        }
+    }
+    
+    return newSortedArr;
+}
+
++(NSDecimalNumber*) calculateSumForEntities:(NSArray*)entities {
+    NSDecimalNumber *totalValue = [NSDecimalNumber zero];
+    if ([[entities lastObject] isKindOfClass:[NSArray class]]) {
+        NSArray *array = [entities lastObject];
+        if ([[array lastObject] isMemberOfClass:[CDExpense class]]) {
+            for (int i = 0; i < entities.count; i++) {
+                NSArray *array = [entities objectAtIndex:i];
+                totalValue = [CDExpense calculateTotalExpense:array];
+            }
+        }
+    }
+    return totalValue;
 }
 
 @end

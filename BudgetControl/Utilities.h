@@ -19,4 +19,8 @@
 
 +(NSString*) checkImageName:(NSString*)imageName;
 
++(NSMutableArray*) sortIncomeOrExpenseArray:(NSArray*)arrayToSort;
++(NSMutableArray*) sortEntitiesByCategories:(NSArray*)arrayToSort;
++(NSDecimalNumber*) calculateSumForEntities:(NSArray*)entities;
+
 @end

@@ -16,6 +16,7 @@
 #import "BudgetCell.h"
 #import "IncomeExpenseCell.h"
 #import "CategoryElementsViewController.h"
+#import "ChartViewController.h"
 
 #import "SetBudgetViewController.h"
 
@@ -26,13 +27,10 @@
     __weak IBOutlet UITableView *tableView;
     
     NSMutableArray *sectionsArray, *incomeArray, *expensesArray;
-    __weak IBOutlet UILabel *titleDateLabel;
 }
 
-- (IBAction)cancel:(id)sender;
-- (IBAction)save:(id)sender;
-
 @end
+
 
 @implementation SetBudgetViewController
 
@@ -42,6 +40,9 @@
     
     tableView.delegate = self;
     tableView.dataSource = self;
+    
+    UIBarButtonItem *chartBarBtnItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"chart.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(chartBtnPressed)];
+    self.navigationItem.rightBarButtonItem = chartBarBtnItem;
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -53,10 +54,10 @@
     expensesArray = [[NSMutableArray alloc] init];
     
     [incomeArray addObjectsFromArray:[self.currentBudget.income allObjects]];
-    incomeArray = [self sortIncomeOrExpenseArray:incomeArray];
+    incomeArray = [Utilities sortIncomeOrExpenseArray:incomeArray];
     
     [expensesArray addObjectsFromArray:[self.currentBudget.expenses allObjects]];
-    expensesArray = [self sortIncomeOrExpenseArray:expensesArray];
+    expensesArray = [Utilities sortIncomeOrExpenseArray:expensesArray];
     
     sectionsArray = [NSMutableArray arrayWithObjects:incomeArray, expensesArray, nil];
     
@@ -74,13 +75,10 @@
 
 #pragma mark - Action methods
 
-- (IBAction)cancel:(id)sender {
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
-
-- (IBAction)save:(id)sender {
-#warning -> save changes before dismiss
-    [self dismissViewControllerAnimated:YES completion:nil];
+-(void) chartBtnPressed {
+    ChartViewController *chartVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ChartViewController"];
+    chartVC.currentBudget = self.currentBudget;
+    [self.navigationController pushViewController:chartVC animated:NO];
 }
 
 
@@ -177,87 +175,27 @@
     CategoryElementsViewController *categoryDetailsVc = [self.storyboard instantiateViewControllerWithIdentifier:@"CategoryElementsViewController"];
     
     if (indexPath.section == 1) {
+        if (![incomeArray count]) {
+            return;
+        }
         categoryDetailsVc.entities = [incomeArray objectAtIndex:indexPath.row];
     }
     else if (indexPath.section == 2) {
+        if (![expensesArray count]) {
+            return;
+        }
         categoryDetailsVc.entities = [expensesArray objectAtIndex:indexPath.row];
     }
+    else {
+        return;
+    }
+    
     [self.navigationController pushViewController:categoryDetailsVc animated:YES];
 }
 
 
 #pragma mark Private methods
 
--(NSMutableArray*) sortIncomeOrExpenseArray:(NSArray*)arrayToSort {
-    // сортування по алфавіту й даті
-    NSSortDescriptor *sortDescrName = [[NSSortDescriptor alloc] initWithKey:@"category.categoryName" ascending:YES];
-    NSSortDescriptor *sortDescrDate = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
-    NSArray *sortDescriptors = @[sortDescrName, sortDescrDate];
-    
-    NSMutableArray *sortedArray = (NSMutableArray*)[arrayToSort sortedArrayUsingDescriptors:sortDescriptors];
-    
-    sortedArray = [self sortEntitiesByCategories:sortedArray];
-
-    return sortedArray;
-}
-
--(NSMutableArray*) sortEntitiesByCategories:(NSArray*)arrayToSort {
-    
-    NSMutableArray *categoryTypes = [[NSMutableArray alloc] init];
-    NSMutableArray *newSortedArr = [[NSMutableArray alloc] init];
-    NSString *categoryName = nil;
-    
-    if ([[arrayToSort lastObject] isMemberOfClass:[CDExpense class]]) {
-        for (CDExpense *exp in arrayToSort) {
-            categoryName = exp.category.categoryName;
-            if (![categoryTypes containsObject:categoryName]) {
-                [categoryTypes addObject:categoryName];
-            }
-        }
-        for (NSString *categName in categoryTypes) {
-            NSMutableArray *entitiesSameCategoryArr = [[NSMutableArray alloc] init];
-            for (CDExpense *exp in arrayToSort) {
-                if ([exp.category.categoryName isEqualToString:categName]) {
-                    [entitiesSameCategoryArr addObject:exp];
-                }
-            }
-            [newSortedArr addObject:entitiesSameCategoryArr];
-        }
-    }
-    else if ([[arrayToSort lastObject] isMemberOfClass:[CDIncome class]]){
-        for (CDIncome *income in arrayToSort) {
-            categoryName = income.category.categoryName;
-            if (![categoryTypes containsObject:categoryName]) {
-                [categoryTypes addObject:categoryName];
-            }
-        }
-        for (NSString *categName in categoryTypes) {
-            NSMutableArray *entitiesSameCategoryArr = [[NSMutableArray alloc] init];
-            for (CDIncome *income in arrayToSort) {
-                if ([income.category.categoryName isEqualToString:categName]) {
-                    [entitiesSameCategoryArr addObject:income];
-                }
-            }
-            [newSortedArr addObject:entitiesSameCategoryArr];
-        }
-    }
-    
-    return newSortedArr;
-}
-
--( NSDecimalNumber*) calculateSumForEntities:(NSArray*)entities {
-    NSDecimalNumber *totalValue = [NSDecimalNumber zero];
-    if ([[entities lastObject] isKindOfClass:[NSArray class]]) {
-        NSArray *array = [entities lastObject];
-        if ([[array lastObject] isMemberOfClass:[CDExpense class]]) {
-            for (int i = 0; i < entities.count; i++) {
-                NSArray *array = [entities objectAtIndex:i];
-                totalValue = [CDExpense calculateTotalExpense:array];
-            }
-        }
-    }
-    return totalValue;
-}
 
 
 
